@@ -36,6 +36,11 @@ public class Gegner : MonoBehaviour
         {
             InvokeRepeating("ChangeRandomDirection",0f,timeBetweenDirectionChange);
         }
+        if (moveType == MovementType.BounceOffWall)
+        {
+            ChangeRandomDirection();
+            this.GetComponent<Rigidbody2D>().AddForce(randomDirection*10,ForceMode2D.Impulse);
+        }
         InvokeRepeating("Attack", 1/ attackPerSecond ,1/ attackPerSecond);
     }
 
@@ -57,7 +62,7 @@ public class Gegner : MonoBehaviour
                 break;
 
             case MovementType.BounceOffWall:
-
+               // this.transform.Translate(randomDirection * moveSpeed * Time.deltaTime);
                 break;
         }
 
@@ -119,4 +124,6 @@ public class Gegner : MonoBehaviour
 
 
     }
+
+   
 }
