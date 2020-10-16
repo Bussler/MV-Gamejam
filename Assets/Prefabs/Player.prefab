@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 645090310}
   - component: {fileID: 645090311}
   - component: {fileID: 795281161}
+  - component: {fileID: 1168656201}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -249,7 +250,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &645090311
 BoxCollider2D:
@@ -290,3 +291,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rosesDamage: 10
+--- !u!114 &1168656201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3279568035561329957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b23cefc48a5cb74098753fececb49e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDashTime: 0.2
+  dashCooldown: 0.2
+  dashSpeed: 7
+  availableDashs: 1
+  maxNumOfDashs: 2
+  dashReloadTime: 2

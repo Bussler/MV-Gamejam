@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &33783009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -283,6 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &121968500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -363,6 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &147033244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -443,6 +446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &164293356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -904,6 +908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &391111366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -984,6 +989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!4 &426976888 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4166546324731195566, guid: c2470966640b2504587f879de2ac25dd, type: 3}
@@ -1131,6 +1137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &517352093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1211,6 +1218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &521909220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1291,6 +1299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &577054510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1775,6 +1784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &809801877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1987,6 +1997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &914987833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2137,6 +2148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &949328325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2287,6 +2299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2450,6 +2463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &1037488026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2530,6 +2544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &1080087000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2610,6 +2625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &1105872327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2690,6 +2706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &1109763232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2941,6 +2958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1 &1250824886
 GameObject:
   m_ObjectHideFlags: 0
@@ -3036,11 +3054,11 @@ Transform:
   - {fileID: 667631018}
   - {fileID: 1109763233}
   - {fileID: 686674846}
-  - {fileID: 298412196}
   - {fileID: 813863894}
   - {fileID: 258020201}
   - {fileID: 1769635345}
   - {fileID: 1608050922}
+  - {fileID: 298412196}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3124,6 +3142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &1374685531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3204,6 +3223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1 &1468886472
 GameObject:
   m_ObjectHideFlags: 0
@@ -3444,6 +3464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &1547831607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3524,6 +3545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1 &1562487547
 GameObject:
   m_ObjectHideFlags: 0
@@ -3807,24 +3829,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1644476275 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4241905361474109687, guid: 437b3987b22e96745a969c2c475b4f8d, type: 3}
-  m_PrefabInstance: {fileID: 4241905362044319620}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1644476276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1644476275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364bf8c041084d1439b051eca9666aa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lives: 5
 --- !u!4 &1644476279 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4241905361474109683, guid: 437b3987b22e96745a969c2c475b4f8d, type: 3}
@@ -4322,6 +4326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &1930984499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4402,6 +4407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &1942647727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4482,6 +4488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &2010455189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4632,6 +4639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &2039312709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4782,6 +4790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  minusAlpha: 0.15
 --- !u!1001 &3279568035121764647
 PrefabInstance:
   m_ObjectHideFlags: 0
