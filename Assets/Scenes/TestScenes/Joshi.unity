@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 1030891079}
   m_Layer: 0
   m_Name: Gegner
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -396,11 +396,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  moveSpeed: 3
-  moveType: 0
+  moveSpeed: 2
+  moveType: 2
+  dodgeRange: 3
   timeBetweenDirectionChange: 1
-  attackPerSecond: 3
-  attackType: 2
+  attackPerSecond: 5
+  attackType: 3
   directions:
   - {x: 1, y: 0}
   - {x: 0, y: 1}
@@ -493,7 +494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030891074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.25, y: 1.82, z: 0}
+  m_LocalPosition: {x: 7.06, y: 1.82, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
@@ -598,7 +599,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1112416095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.88, y: 2.64, z: 0}
+  m_LocalPosition: {x: -1, y: 1.45, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}

@@ -8,6 +8,16 @@ public class EnemyProjectile : MonoBehaviour
     public float lifetime;
     public int damage;
     public Vector3 moveVec;
+
+    public enum trajectory
+    {
+        straight,
+        wiggle,
+        targetSeeking,
+
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +36,13 @@ public class EnemyProjectile : MonoBehaviour
     }
 
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         //Test for player and do damage
-        Destroy(gameObject);
+        if (other.gameObject.tag != "Enemy")
+        {
+          
+            Destroy(gameObject);
+        }
     }
 }

@@ -12,23 +12,31 @@ public class Gegner : MonoBehaviour
         Random,
         FollowPlayer,
         Stationary,
-        BounceOffWall
+        BounceOffWall,
+        CircleAroundPlayer
     }
     public MovementType moveType;
+    public float dodgeRange;
     public float timeBetweenDirectionChange;
+    private float time;
     private Vector3 randomDirection;
     public float attackPerSecond;
     public enum AttackType
     {
         ShootTowardsPlayer,
         ShootRandomDirection,
-        ShootSpecificDiretions
+        ShootSpecificDiretions,
+        ShootPredicitveShot
     }
     public AttackType attackType;
     public Vector2[] directions;
     public GameObject projectile;
 
     public GameObject player;
+
+    int x = 0;
+    private Vector3 playerMoveDirection;
+    private Vector3 playerLastPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,11 +50,17 @@ public class Gegner : MonoBehaviour
             this.GetComponent<Rigidbody2D>().AddForce(randomDirection*10,ForceMode2D.Impulse);
         }
         InvokeRepeating("Attack", 1/ attackPerSecond ,1/ attackPerSecond);
+        do
+        {
+            x = Random.Range(-1, 2);
+        } while (x == 0);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        playerMoveDirection = player.transform.position - playerLastPos;
+        playerLastPos = player.transform.position;
         switch (moveType)
         {
             case MovementType.Random:
@@ -55,6 +69,24 @@ public class Gegner : MonoBehaviour
 
                 case MovementType.FollowPlayer:
                 this.transform.Translate((player.transform.position - this.transform.position).normalized * moveSpeed*Time.deltaTime);
+                if((player.transform.position - this.transform.position).magnitude < dodgeRange)
+                {
+                    time += Time.deltaTime;
+                   
+                    if (time > timeBetweenDirectionChange)
+                    {
+                        do
+                        {
+                            x = Random.Range(-1, 2);
+                        } while (x == 0);
+
+
+                        time = 0;
+                    }
+                    Vector2 p = (player.transform.position - this.transform.position);
+                    
+                    this.transform.Translate(Vector2.Perpendicular(p).normalized * moveSpeed*1.5f*x * Time.deltaTime);
+                }
                 break;
 
             case MovementType.Stationary:
@@ -64,6 +96,32 @@ public class Gegner : MonoBehaviour
             case MovementType.BounceOffWall:
                // this.transform.Translate(randomDirection * moveSpeed * Time.deltaTime);
                 break;
+            case MovementType.CircleAroundPlayer:
+               
+                if ((player.transform.position - this.transform.position).magnitude < dodgeRange)
+                {
+                    time += Time.deltaTime;
+
+                    if (time > timeBetweenDirectionChange)
+                    {
+                        do
+                        {
+                            x = Random.Range(-1, 2);
+                        } while (x == 0);
+
+
+                        time = 0;
+                    }
+                    Vector2 p = (player.transform.position - this.transform.position);
+
+                    this.transform.Translate(Vector2.Perpendicular(p).normalized * moveSpeed * 1.5f * x * Time.deltaTime);
+                }
+                else
+                {
+                     this.transform.Translate((player.transform.position - this.transform.position).normalized * moveSpeed * Time.deltaTime);
+                }
+                break;
+
         }
 
 
@@ -91,11 +149,12 @@ public class Gegner : MonoBehaviour
     }
 
     public void Attack() {
-
+       
         switch (attackType)
         {
             case AttackType.ShootTowardsPlayer:
-               GameObject g= Instantiate(projectile, this.transform.position, Quaternion.identity);
+                Debug.Log("attack");
+                GameObject g= Instantiate(projectile, this.transform.position, Quaternion.identity);
                 g.transform.right = player.transform.position - g.transform.position;
                 g.GetComponent<EnemyProjectile>().moveVec = (player.transform.position - g.transform.position).normalized;
 
@@ -119,11 +178,16 @@ public class Gegner : MonoBehaviour
                 }
                 break;
 
-           
+            case AttackType.ShootPredicitveShot:
+                GameObject l = Instantiate(projectile, this.transform.position, Quaternion.identity);
+                l.transform.right = (player.transform.position+playerMoveDirection*3) - l.transform.position;
+                l.GetComponent<EnemyProjectile>().moveVec = ((player.transform.position + playerMoveDirection*3) - l.transform.position).normalized;
+                break;
+
         }
 
 
     }
 
-   
+  
 }
