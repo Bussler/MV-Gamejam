@@ -400,7 +400,7 @@ MonoBehaviour:
   moveType: 2
   dodgeRange: 3
   timeBetweenDirectionChange: 1
-  attackPerSecond: 5
+  attackPerSecond: 2
   attackType: 0
   directions:
   - {x: 1, y: 0}

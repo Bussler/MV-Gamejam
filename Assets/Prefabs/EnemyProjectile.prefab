@@ -97,11 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28770a8f554d0d94b9a3d2a1e04f4d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   lifetime: 10
-  damage: 0
+  damage: 1
   moveVec: {x: 0, y: 0, z: 0}
-  trajectoryType: 5
+  trajectoryType: 3
   enemy: {fileID: 0}
 --- !u!61 &-1262987663980202182
 BoxCollider2D:

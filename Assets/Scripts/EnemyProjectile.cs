@@ -31,15 +31,16 @@ public class EnemyProjectile : MonoBehaviour
     void Start()
     {
         player = GameObject.FindObjectOfType<PlayerMovement>().gameObject;
-        if (trajectoryType==Trajectory.bouncing)
+        if (trajectoryType==Trajectory.orbiting)
         {
-            
-            //this.GetComponent<Rigidbody2D>().AddForce(moveVec * 100, ForceMode2D.Impulse);
+
+            this.transform.position += moveVec * 2;
+
         }
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         switch (trajectoryType)
         {
@@ -72,13 +73,10 @@ public class EnemyProjectile : MonoBehaviour
 
                 break;
             case Trajectory.orbiting:
-                // this.transform.Translate(transform.right * -speed * 0.5f * Time.deltaTime, Space.Self);
-                // Vector2 p = (player.transform.position - this.transform.position);
-
-                // this.transform.Translate(Vector2.Perpendicular(p).normalized * speed * 2f  * Time.deltaTime);
-                this.transform.up = (enemy.transform.position - this.transform.position);
-                this.transform.Translate(transform.right * speed * 0.5f * Time.deltaTime, Space.Self);
-                     this.transform.Translate(transform.up * -speed * 2f * Time.deltaTime, Space.Self);
+             
+                this.transform.Translate(Vector2.Perpendicular((enemy.transform.position - this.transform.position)).normalized * speed * 2f * Time.deltaTime, Space.World);
+               
+                this.transform.Translate((enemy.transform.position - this.transform.position).normalized * -speed * 0.01f * Time.deltaTime, Space.World);
                 break;
             case Trajectory.piercing:
                 this.transform.Translate(moveVec * speed * Time.deltaTime, Space.World);

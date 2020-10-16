@@ -8,9 +8,19 @@ using UnityEngine.UIElements;
 public class HitboxDetection : MonoBehaviour
 {
     private BoxCollider2D _playerHitbox;
-
-    private String _playerTag = "Player";
     
+    private String _playerTag = "Player";
+
+    [SerializeField] private int rosesDamage = 10;
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag.Equals("Roses"))
+        {
+            StatManager.StatManagerInstance.DecreaseLifePoints(rosesDamage);
+            return;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag.Equals("EnemyProjectile"))
@@ -25,7 +35,6 @@ public class HitboxDetection : MonoBehaviour
         String[] objectTags = other.gameObject.tag.Split('-');
         if (objectTags[0].Equals("Flower"))
         {
-            
             int flowerType = int.Parse(objectTags[1]);
             StatManager.StatManagerInstance.SetCurrentPollType(flowerType);
         }
