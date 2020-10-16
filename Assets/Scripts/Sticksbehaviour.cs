@@ -5,6 +5,8 @@ using UnityEngine;
 public class Sticksbehaviour : MonoBehaviour
 {
     public int lives = 5;
+    [SerializeField]
+    float minusAlpha = 0.15f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +21,7 @@ public class Sticksbehaviour : MonoBehaviour
             Destroy(collision.gameObject);
             lives--;
             Color cur = GetComponent<SpriteRenderer>().color;
-            this.GetComponent<SpriteRenderer>().color = new Color(cur.r, cur.g, cur.b, cur.a-0.1f);
+            this.GetComponent<SpriteRenderer>().color = new Color(cur.r, cur.g, cur.b, cur.a-minusAlpha);
             if (lives <= 0)
                 Destroy(gameObject);
         }
