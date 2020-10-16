@@ -20,7 +20,6 @@ public class Sticksbehaviour : MonoBehaviour
             lives--;
             Color cur = GetComponent<SpriteRenderer>().color;
             this.GetComponent<SpriteRenderer>().color = new Color(cur.r, cur.g, cur.b, cur.a-0.1f);
-            Debug.Log("Haha");
             if (lives <= 0)
                 Destroy(gameObject);
         }
