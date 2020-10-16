@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2050218110785747514}
   m_Layer: 0
   m_Name: EnemyProjectile
-  m_TagString: Untagged
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,10 +97,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28770a8f554d0d94b9a3d2a1e04f4d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
   lifetime: 10
   damage: 0
   moveVec: {x: 0, y: 0, z: 0}
+  trajectoryType: 5
+  enemy: {fileID: 0}
 --- !u!61 &-1262987663980202182
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -157,7 +157,7 @@ public class Gegner : MonoBehaviour
                 GameObject g= Instantiate(projectile, this.transform.position, Quaternion.identity);
                 g.transform.right = player.transform.position - g.transform.position;
                 g.GetComponent<EnemyProjectile>().moveVec = (player.transform.position - g.transform.position).normalized;
-
+                g.GetComponent<EnemyProjectile>().enemy = this.gameObject;
 
                 break;
 
@@ -166,6 +166,7 @@ public class Gegner : MonoBehaviour
                 Vector3 m = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0).normalized;
                 k.transform.right = m;
                 k.GetComponent<EnemyProjectile>().moveVec = m;
+                k.GetComponent<EnemyProjectile>().enemy = this.gameObject;
                 break;
 
             case AttackType.ShootSpecificDiretions:
@@ -175,6 +176,7 @@ public class Gegner : MonoBehaviour
                     GameObject p = Instantiate(projectile, this.transform.position, Quaternion.identity);
                     p.transform.right = directions[i];
                     p.GetComponent<EnemyProjectile>().moveVec = directions[i].normalized;
+                    p.GetComponent<EnemyProjectile>().enemy = this.gameObject;
                 }
                 break;
 
@@ -182,6 +184,7 @@ public class Gegner : MonoBehaviour
                 GameObject l = Instantiate(projectile, this.transform.position, Quaternion.identity);
                 l.transform.right = (player.transform.position+playerMoveDirection*3) - l.transform.position;
                 l.GetComponent<EnemyProjectile>().moveVec = ((player.transform.position + playerMoveDirection*3) - l.transform.position).normalized;
+                l.GetComponent<EnemyProjectile>().enemy = this.gameObject;
                 break;
 
         }
