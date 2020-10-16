@@ -100,7 +100,7 @@ public class EnemyProjectile : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other)
     {
         //Test for player and do damage
-        if (other.gameObject.tag != "Enemy")
+        if (other.gameObject.tag != "Enemy" &&other.gameObject.tag!="Honey")
         {
             if (trajectoryType == Trajectory.bouncing&& other.tag != "EnemyProjectile" )
             {

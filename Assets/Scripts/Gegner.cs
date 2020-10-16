@@ -40,6 +40,8 @@ public class Gegner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").gameObject;
+
         if(moveType== MovementType.Random)
         {
             InvokeRepeating("ChangeRandomDirection",0f,timeBetweenDirectionChange);
@@ -153,7 +155,7 @@ public class Gegner : MonoBehaviour
         switch (attackType)
         {
             case AttackType.ShootTowardsPlayer:
-                Debug.Log("attack");
+                //Debug.Log("attack");
                 GameObject g= Instantiate(projectile, this.transform.position, Quaternion.identity);
                 g.transform.right = player.transform.position - g.transform.position;
                 g.GetComponent<EnemyProjectile>().moveVec = (player.transform.position - g.transform.position).normalized;
