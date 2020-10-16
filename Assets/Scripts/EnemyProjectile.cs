@@ -9,25 +9,88 @@ public class EnemyProjectile : MonoBehaviour
     public int damage;
     public Vector3 moveVec;
 
-    public enum trajectory
+    public enum Trajectory
     {
         straight,
         wiggle,
         targetSeeking,
+        orbiting,
+        piercing,
+        bouncing,
+        
 
 
     }
 
+    public Trajectory trajectoryType;
+    private GameObject player;
+    public GameObject enemy;
+    private float time;
+    private int x=1;
     // Start is called before the first frame update
     void Start()
     {
-       
+        player = GameObject.FindObjectOfType<PlayerMovement>().gameObject;
+        if (trajectoryType==Trajectory.bouncing)
+        {
+            
+            //this.GetComponent<Rigidbody2D>().AddForce(moveVec * 100, ForceMode2D.Impulse);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.transform.Translate(moveVec * speed * Time.deltaTime,Space.World);
+        switch (trajectoryType)
+        {
+
+            case Trajectory.straight:
+                this.transform.Translate(moveVec * speed * Time.deltaTime, Space.World);
+                break;
+
+            case Trajectory.wiggle:
+                this.transform.Translate(moveVec * speed * 1f * Time.deltaTime, Space.World);
+               
+                    time += Time.deltaTime;
+
+                    if (time > 0.33f)
+                    {
+                         x = -x;
+
+
+                        time = 0;
+                    }
+                    Vector2 p = (player.transform.position - this.transform.position);
+
+                    this.transform.Translate(Vector2.Perpendicular(p).normalized * speed * 0.5f * x * Time.deltaTime);
+               
+                break;
+
+            case Trajectory.targetSeeking:
+                this.transform.Translate(moveVec * speed* 0.3f * Time.deltaTime, Space.World);
+                this.transform.Translate((player.transform.position-this.transform.position).normalized *0.7f *speed * Time.deltaTime, Space.World);
+
+                break;
+            case Trajectory.orbiting:
+                // this.transform.Translate(transform.right * -speed * 0.5f * Time.deltaTime, Space.Self);
+                // Vector2 p = (player.transform.position - this.transform.position);
+
+                // this.transform.Translate(Vector2.Perpendicular(p).normalized * speed * 2f  * Time.deltaTime);
+                this.transform.up = (enemy.transform.position - this.transform.position);
+                this.transform.Translate(transform.right * speed * 0.5f * Time.deltaTime, Space.Self);
+                     this.transform.Translate(transform.up * -speed * 2f * Time.deltaTime, Space.Self);
+                break;
+            case Trajectory.piercing:
+                this.transform.Translate(moveVec * speed * Time.deltaTime, Space.World);
+                break;
+          
+            case Trajectory.bouncing:
+                this.transform.Translate(moveVec * speed * Time.deltaTime, Space.World);
+                break;
+        }
+
+
+        
         lifetime -= Time.deltaTime;
         if (lifetime <= 0)
         {
@@ -41,8 +104,27 @@ public class EnemyProjectile : MonoBehaviour
         //Test for player and do damage
         if (other.gameObject.tag != "Enemy")
         {
-          
-            Destroy(gameObject);
+            if (trajectoryType == Trajectory.bouncing&& other.tag != "EnemyProjectile" )
+            {
+                int l = 0;
+                Debug.Log(Vector3.SignedAngle(moveVec, other.ClosestPoint(this.transform.position) - new Vector2(this.transform.position.x, this.transform.position.y),Vector3.back));
+                if(Vector3.SignedAngle(moveVec, other.ClosestPoint(this.transform.position) - new Vector2(this.transform.position.x, this.transform.position.y), Vector3.back) > 0)
+                {
+                    l = 1;
+                }
+                else
+                {
+                    l = -1;
+                }
+               
+                moveVec = Vector2.Perpendicular(moveVec)*l;
+            }
+            
+            if (trajectoryType != Trajectory.piercing&& trajectoryType != Trajectory.bouncing && other.tag != "EnemyProjectile")
+            {
+                Destroy(gameObject);
+            }
+            
         }
     }
 }
