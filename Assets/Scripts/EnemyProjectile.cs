@@ -75,10 +75,12 @@ public class EnemyProjectile : MonoBehaviour
 
                 break;
             case Trajectory.orbiting:
-             
-                this.transform.Translate(Vector2.Perpendicular((enemy.transform.position - this.transform.position)).normalized * speed * 2f * Time.deltaTime, Space.World);
-               
-                this.transform.Translate((enemy.transform.position - this.transform.position).normalized * -speed * 0.01f * Time.deltaTime, Space.World);
+                if (enemy != null)
+                {
+                    this.transform.Translate(Vector2.Perpendicular((enemy.transform.position - this.transform.position)).normalized * speed * 2f * Time.deltaTime, Space.World);
+
+                    this.transform.Translate((enemy.transform.position - this.transform.position).normalized * -speed * 0.01f * Time.deltaTime, Space.World);
+                }
                 break;
             case Trajectory.piercing:
                 this.transform.Translate(moveVec * speed * Time.deltaTime, Space.World);
