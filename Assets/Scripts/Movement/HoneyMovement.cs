@@ -33,7 +33,7 @@ public class HoneyMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Wall") || collision.gameObject.tag.Equals("Roses"))
+        if (collision.gameObject.tag.Equals("Wall") || collision.gameObject.tag.Equals("Roses")|| collision.gameObject.tag.Equals("Enemy"))
             Destroy(gameObject);
     }
 
