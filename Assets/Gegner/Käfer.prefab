@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3524947967383885415}
   - component: {fileID: 3524947967383885411}
   - component: {fileID: 945278510438234783}
+  - component: {fileID: -4344844102796988057}
   m_Layer: 9
   m_Name: "K\xE4fer"
   m_TagString: Enemy
@@ -178,3 +179,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e584adaa4a8eab543a452dfbf4b6346b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &-4344844102796988057
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3524947967383885414}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 563b1de51ee8fc5428cd1c448641d63b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

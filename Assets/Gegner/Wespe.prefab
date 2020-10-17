@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1628964170968843638}
   - component: {fileID: 1628964170968843634}
   - component: {fileID: 3129528970244139406}
+  - component: {fileID: 3491369978335978543}
   m_Layer: 9
   m_Name: Wespe
   m_TagString: Enemy
@@ -174,3 +175,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e584adaa4a8eab543a452dfbf4b6346b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &3491369978335978543
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628964170968843639}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 47c274b7771013248a1927189071bac2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
