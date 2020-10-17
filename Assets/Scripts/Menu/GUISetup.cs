@@ -14,6 +14,17 @@ public class GUISetup : MonoBehaviour
 
     public GameObject ingameMenu;
 
+    [SerializeField]
+    Text MoveSpeed;
+    [SerializeField]
+    Text AttackDmg;
+    [SerializeField]
+    Text AttackRange;
+    [SerializeField]
+    Text AttackFreq;
+    [SerializeField]
+    Text ProjectileSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +36,14 @@ public class GUISetup : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             showUnshowMenu();
+        if (ingameMenu.activeInHierarchy)
+        {
+            MoveSpeed.text = "Movement Speed: "+ StatManager.StatManagerInstance.GetPlayerSpeed();
+            AttackDmg.text = "Attack Damage: " + StatManager.StatManagerInstance.GetAttackDamage();
+            AttackRange.text = "Attack Range: " + StatManager.StatManagerInstance.GetProjectileLifetime();
+            AttackFreq.text = "Attack Speed: " + (1-StatManager.StatManagerInstance.GetFireRate());
+            ProjectileSpeed.text = "Projectile Speed: " + StatManager.StatManagerInstance.GetProjectileSpeed();
+        }
         showHearts();
         showSprints();
         Nektar.text = "Nectar: " + StatManager.StatManagerInstance.GetNectarAmount();
