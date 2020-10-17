@@ -33,6 +33,7 @@ public class RoomTransition : MonoBehaviour
     public Transform northEntrance;
 
     private GameObject player;
+    private bool shouldSpawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +74,17 @@ public class RoomTransition : MonoBehaviour
 
     public void EnterNewRoom(Room room)
     {
+        GameObject[] projectiles = GameObject.FindGameObjectsWithTag("Honey");
+        foreach( GameObject p in projectiles)
+        {
+            Destroy(p);
+        }
+        GameObject[] projectilesE = GameObject.FindGameObjectsWithTag("EnemyProjectile");
+        foreach (GameObject p in projectilesE)
+        {
+            Destroy(p);
+        }
+
         Debug.Log(rooms[coordX, coordY].ToString());
         // Debug.Log("" + room.doorWayEast);
         // Debug.Log("" + room.doorWayWest);
@@ -82,17 +94,23 @@ public class RoomTransition : MonoBehaviour
         if (activeRoom != null)
         {
             activeRoom.gameObject.transform.Translate(-1000,0,0);
+            activeRoom.transform.GetChild(0).gameObject.SetActive(false);
+        }
+        else
+        {
+            shouldSpawn = false;
         }
         if (spawned[coordX, coordY])//wenn es schon gespawned wurde
         {
             activeRoom = GameObject.Find("" + coordX + "," + coordY);
             //activeRoom.SetActive(true);
             activeRoom.gameObject.transform.Translate(1000, 0, 0);
-            
+            activeRoom.transform.GetChild(0).gameObject.SetActive(true);
+            shouldSpawn = false;
         }
         else
         {
-
+            shouldSpawn = true;
             switch (room.roomType)
             {
                 case Room.RoomType.Regular:
@@ -104,6 +122,7 @@ public class RoomTransition : MonoBehaviour
                     activeRoom = Instantiate(roomPrefaps[Random.Range(0, roomPrefaps.Length)], Vector3.zero, Quaternion.identity);
                     activeRoom.name = "" + coordX + "," + coordY;
                     spawned[coordX, coordY] = true;
+                    shouldSpawn = false;
 
                     break;
                 case Room.RoomType.Shop:
@@ -161,6 +180,11 @@ public class RoomTransition : MonoBehaviour
         else
         {
             DoorWest.SetActive(false);
+        }
+
+        if (shouldSpawn)
+        {
+            GameObject.FindObjectOfType<EnemySpawner>().spawnEnemies(Random.Range(1, 4));
         }
     }
 

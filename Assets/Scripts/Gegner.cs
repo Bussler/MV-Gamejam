@@ -181,6 +181,7 @@ public class Gegner : MonoBehaviour
     private void Die()
     {
         Instantiate(DieParticle, this.transform.position, Quaternion.identity);
+        GameObject.FindObjectOfType<EnemySpawner>().spawnedEnemies.Remove(this.gameObject);
         Destroy(this.gameObject);
     }
 

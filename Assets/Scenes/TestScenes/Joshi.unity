@@ -1134,13 +1134,10 @@ MonoBehaviour:
   activeRoom: {fileID: 0}
   roomPrefaps:
   - {fileID: 5860507436421633472, guid: fbe852ab873d1fe4a9c98a2eb96a03e3, type: 3}
-  - {fileID: 4463942252721306701, guid: a2e50a4c0684d6c498505bf7c3b650d4, type: 3}
   shopRoomPrefaps:
-  - {fileID: 8844587683437336962, guid: 16b9f218d656de3468f68b8d6d4ddb57, type: 3}
-  - {fileID: 1788045121248038455, guid: fdde557a6f638264bbf4c366fb79eb33, type: 3}
+  - {fileID: 5860507436421633472, guid: fbe852ab873d1fe4a9c98a2eb96a03e3, type: 3}
   itemRoomPrefaps:
-  - {fileID: 1107383269910934782, guid: ac59d146da2cc844fac006ad8b9e7336, type: 3}
-  - {fileID: 2692933319015677802, guid: e68260e9322923a41bbfcb883025d44c, type: 3}
+  - {fileID: 5860507436421633472, guid: fbe852ab873d1fe4a9c98a2eb96a03e3, type: 3}
   bossRoomPrefaps:
   - {fileID: 5860507436421633472, guid: fbe852ab873d1fe4a9c98a2eb96a03e3, type: 3}
   westEntrance: {fileID: 1269632263}
@@ -1512,6 +1509,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1517494832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1517494834}
+  - component: {fileID: 1517494833}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1517494833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517494832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6effb916eee92c0459abd4f969df728a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 3986152007102285326, guid: 0cf52f52d9a07784bb86bd3028f451ef, type: 3}
+  - {fileID: 7874978077116876953, guid: c06eb4d082ee7c24a8c168ad19e1a14e, type: 3}
+  - {fileID: 3952008885731787747, guid: da2ce26c15959bf4096fc20a5691e309, type: 3}
+  - {fileID: 3524947967383885414, guid: f225f796e4cff354b9e90afb1ed5b383, type: 3}
+  - {fileID: 4955950057312854145, guid: 2b90f54737385e4468c13f01994ea52e, type: 3}
+  - {fileID: 7659986787846989975, guid: 9896e13e63dea3b498b031a7db79796b, type: 3}
+  - {fileID: 9005835027843388427, guid: 1279f40a4fbc8cc45b7776f76626f696, type: 3}
+  - {fileID: 1628964170968843639, guid: d11b690f0cb8d2249bbfc3187cd92d95, type: 3}
+  - {fileID: 8704576674488557452, guid: 7b275d9c7d7d7c8449b28d293570deab, type: 3}
+--- !u!4 &1517494834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517494832}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 50.78437, y: 54.524063, z: -39.7616}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1586476663
 GameObject:

@@ -10,39 +10,43 @@ public class Door : MonoBehaviour
 
    public Side side;
     private RoomTransition rt;
+    private EnemySpawner eS;
     // Start is called before the first frame update
     void Start()
     {
         rt = GameObject.FindObjectOfType<RoomTransition>();
+        eS = GameObject.FindObjectOfType<EnemySpawner>();
     }
 
-   
+
 
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        switch (side)
+        if (other.tag.Equals("Player")&&eS.cleared)
         {
+            switch (side)
+            {
 
-            case Side.west:
-                rt.GoToNextRoomWest();
+                case Side.west:
+                    rt.GoToNextRoomWest();
 
-                break;
-            case Side.east:
-                rt.GoToNextRoomEast();
+                    break;
+                case Side.east:
+                    rt.GoToNextRoomEast();
 
-                break;
-            case Side.south:
-                rt.GoToNextRoomSouth();
+                    break;
+                case Side.south:
+                    rt.GoToNextRoomSouth();
 
-                break;
-            case Side.north:
-                rt.GoToNextRoomNorth();
+                    break;
+                case Side.north:
+                    rt.GoToNextRoomNorth();
 
-                break;
+                    break;
 
 
+            }
         }
     }
-
 }
