@@ -22,18 +22,19 @@ public class Shop : MonoBehaviour
          }
      }
 
-     public void buyItem(int index)
+     public bool buyItem(int index)
      {
          Item item = items[index];
          if (StatManager.StatManagerInstance.GetNectarAmount() >= item.cost)
          {
              StatManager.StatManagerInstance.DecreaseNectarAmount(item.cost);
              item.ApplyEffects();
+            return true;
          }
          else
          {
              Debug.Log("Could not buy item " + items[index].name + " because not enough nectar is available.");
-             return;
+             return false;
          }
      }
 }

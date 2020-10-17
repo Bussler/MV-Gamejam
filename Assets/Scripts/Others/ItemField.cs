@@ -14,7 +14,8 @@ public class ItemField : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) //buy the item
     {
-        Shop.ShopInstance.buyItem(indexForBuy);
+        if (Shop.ShopInstance.buyItem(indexForBuy))
+            Destroy(gameObject);//destroy gameobject after buy
     }
 
 }
