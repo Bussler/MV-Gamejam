@@ -65,13 +65,13 @@ public class StatManager : MonoBehaviour
         
     }
     
-    public void DecreaseLifePoints(int damage)
+    public void DecreaseLifePoints(float damage)
     {
         playerAttributes[1] -= damage;
         CheckIfDead();
         // TODO etwas machen
     }
-    public void IncreaseLifePoints(int increase)
+    public void IncreaseLifePoints(float increase)
     {
         
         playerAttributes[1] += increase;
@@ -86,11 +86,11 @@ public class StatManager : MonoBehaviour
         return playerAttributes[1];
     }
 
-    public void IncreasePlayerSpeed(int increase)
+    public void IncreasePlayerSpeed(float increase)
     {
         playerAttributes[0] += increase;
     }
-    public void DecreasePlayerSpeed(int decrease)
+    public void DecreasePlayerSpeed(float decrease)
     {
         playerAttributes[0] -= decrease;
     }
@@ -99,11 +99,11 @@ public class StatManager : MonoBehaviour
         return playerAttributes[0];
     }
 
-    public void IncreaseProjectileLifetime(int increase)
+    public void IncreaseProjectileLifetime(float increase)
     {
         playerAttributes[2] += increase;
     }
-    public void DecreaseProjectileLifetime(int decrease)
+    public void DecreaseProjectileLifetime(float decrease)
     {
         playerAttributes[2] -= decrease;
     }
@@ -112,11 +112,11 @@ public class StatManager : MonoBehaviour
         return playerAttributes[2];
     }
 
-    public void IncreaseAttackDamage(int increase)
+    public void IncreaseAttackDamage(float increase)
     {
         playerAttributes[3] += increase;
     }
-    public void DecreaseAttackDamage(int decrease)
+    public void DecreaseAttackDamage(float decrease)
     {
         playerAttributes[3] -= decrease;
     }
@@ -125,11 +125,11 @@ public class StatManager : MonoBehaviour
         return playerAttributes[3];
     }
     
-    public void IncreaseNumberOfDashes(int increase)
+    public void IncreaseNumberOfDashes(float increase)
     {
         playerAttributes[4] += increase;
     }
-    public void DecreaseNumberOfDashes(int decrease)
+    public void DecreaseNumberOfDashes(float decrease)
     {
         playerAttributes[4] -= decrease;
     }
@@ -138,11 +138,11 @@ public class StatManager : MonoBehaviour
         return playerAttributes[4];
     }
 
-    public void IncreaseMaxNumberOfDashes(int increase)
+    public void IncreaseMaxNumberOfDashes(float increase)
     {
         playerAttributes[9] += increase;
     }
-    public void DecreaseMaxNumberOfDashes(int decrease)
+    public void DecreaseMaxNumberOfDashes(float decrease)
     {
         playerAttributes[9] -= decrease;
     }
@@ -151,11 +151,11 @@ public class StatManager : MonoBehaviour
         return playerAttributes[9];
     }
 
-    public void IncreaseDashCooldown(int increase)
+    public void IncreaseDashCooldown(float increase)
     {
         playerAttributes[5] += increase;
     }
-    public void DecreaseDashCooldown(int decrease)
+    public void DecreaseDashCooldown(float decrease)
     {
         playerAttributes[5] -= decrease;
     }
@@ -164,11 +164,11 @@ public class StatManager : MonoBehaviour
         return playerAttributes[5];
     }
     
-    public void IncreaseProjectileSpeed(int increase)
+    public void IncreaseProjectileSpeed(float increase)
     {
         playerAttributes[6] += increase;
     }
-    public void DecreaseProjectileSpeed(int decrease)
+    public void DecreaseProjectileSpeed(float decrease)
     {
         playerAttributes[6] -= decrease;
     }
@@ -190,11 +190,11 @@ public class StatManager : MonoBehaviour
         return nectarAmount;
     }
     
-    public void IncreaseFireRate(int increase)
+    public void IncreaseFireRate(float increase)
     {
         playerAttributes[7] += increase;
     }
-    public void DecreaseFireRate(int decrease)
+    public void DecreaseFireRate(float decrease)
     {
         playerAttributes[7] -= decrease;
     }
@@ -203,11 +203,11 @@ public class StatManager : MonoBehaviour
         return playerAttributes[7];
     }
     
-    public void IncreaseMaxHealth(int increase)
+    public void IncreaseMaxHealth(float increase)
     {
         playerAttributes[8] += increase;
     }
-    public void DecreaseMaxHealth(int decrease)
+    public void DecreaseMaxHealth(float decrease)
     {
         playerAttributes[8] -= decrease;
     }
