@@ -14,7 +14,7 @@ public class EnemyHitBoxDetection : MonoBehaviour
         if (other.gameObject.tag.Equals("Honey"))
         {
             Debug.Log("Hit");
-            this.GetComponent<Gegner>().TakeDamage(GameObject.FindObjectOfType<StatManager>().GetAttackDamage());
+            this.GetComponent<Gegner>().TakeDamage((int)GameObject.FindObjectOfType<StatManager>().GetAttackDamage());
 
 
         } 

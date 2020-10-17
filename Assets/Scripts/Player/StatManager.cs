@@ -9,18 +9,19 @@ public class StatManager : MonoBehaviour
     public static StatManager StatManagerInstance { get; private set; }
     // Start is called before the first frame update
 
-    //[SerializeField] private int playerSpeed = 5, lifePoints = 100, attackRange = 10, attackDamage = 1, numberOfDashes = 1, dashCooldownInSeconds = 20, projectileSpeed = 5;
+    //[SerializeField] private int playerSpeed = 5, lifePoints = 100, attackRange = 10, attackDamage = 1, numberOfDashes = 1, dashCooldownInSeconds = 20, projectileSpeed = 5, fireRate;
     //Reihenfolge der attribute wie in der Zeile hierüber
     [SerializeField]
-    private int[] playerAttributes = new[]
+    private float[] playerAttributes = new []
     {
-        5,
-        100,
-        10,
-        1,
-        1,
-        20,
-        5
+        5.0f,     // playerSpeed
+        100.0f,   // lifePoints
+        0.8f,     // projectileLifetime
+        1.0f,     // attackDamage
+        1.0f,     // numberOfDashes
+        20.0f,    // dashCooldownInSeconds
+        5.0f,     // projectileSpeed
+        0.3f      // fireRate
     };
     
     // poll types: -1 - none, 0 - blue, 1 - red, 2 - lila, 3 - yellow
@@ -70,7 +71,7 @@ public class StatManager : MonoBehaviour
     {
         playerAttributes[1] += increase;
     }
-    public int GetLifePoints()
+    public float GetLifePoints()
     {
         return playerAttributes[1];
     }
@@ -83,20 +84,20 @@ public class StatManager : MonoBehaviour
     {
         playerAttributes[0] -= decrease;
     }
-    public int GetPlayerSpeed()
+    public float GetPlayerSpeed()
     {
         return playerAttributes[0];
     }
 
-    public void IncreaseAttackRange(int increase)
+    public void IncreaseProjectileLifetime(int increase)
     {
         playerAttributes[2] += increase;
     }
-    public void DecreaseAttackRange(int decrease)
+    public void DecreaseProjectileLifetime(int decrease)
     {
         playerAttributes[2] -= decrease;
     }
-    public int GetAttackRange()
+    public float GetProjectileLifetime()
     {
         return playerAttributes[2];
     }
@@ -109,7 +110,7 @@ public class StatManager : MonoBehaviour
     {
         playerAttributes[3] -= decrease;
     }
-    public int GetAttackDamage()
+    public float GetAttackDamage()
     {
         return playerAttributes[3];
     }
@@ -122,7 +123,7 @@ public class StatManager : MonoBehaviour
     {
         playerAttributes[4] -= decrease;
     }
-    public int GetNumberOfDashes()
+    public float GetNumberOfDashes()
     {
         return playerAttributes[4];
     }
@@ -135,7 +136,7 @@ public class StatManager : MonoBehaviour
     {
         playerAttributes[5] -= decrease;
     }
-    public int GetDashCooldown()
+    public float GetDashCooldown()
     {
         return playerAttributes[5];
     }
@@ -148,7 +149,7 @@ public class StatManager : MonoBehaviour
     {
         playerAttributes[6] -= decrease;
     }
-    public int GetProjectileSpeed()
+    public float GetProjectileSpeed()
     {
         return playerAttributes[6];
     }
@@ -164,6 +165,19 @@ public class StatManager : MonoBehaviour
     public int GetNectarAmount()
     {
         return nectarAmount;
+    }
+    
+    public void IncreaseFireRate(int increase)
+    {
+        playerAttributes[7] += increase;
+    }
+    public void DecreaseFireRate(int decrease)
+    {
+        playerAttributes[7] -= decrease;
+    }
+    public float GetFireRate()
+    {
+        return playerAttributes[7];
     }
     
     public void SetCurrentPollType(int type)

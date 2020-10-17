@@ -4,37 +4,76 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Item", menuName = "Item")]
 public class Item : ScriptableObject
 {
+    public enum stats
+    {
+        PlayerSpeed,
+        LifePoints,
+        ProjectileLifeTime,
+        AttackDamage,
+        NumberOfDashes,
+        DashCooldown,
+        ProjectileSpeed,
+        FireRate
+    }
     public new String name;
     public int cost;
-    public int[] changedStats;
+    public stats[] changedStats;
     public int[] changedStatsAmount;
+    public bool[] isPositiveBonus;
 
     public void ApplyEffects()
     {
         for (int i = 0; i < changedStats.Length; i++)
         {
             switch (changedStats[i])
-            {
-                case 0:
-                    StatManager.StatManagerInstance.IncreasePlayerSpeed(changedStatsAmount[i]);
+            { 
+                case stats.PlayerSpeed:
+                    if (isPositiveBonus[i])
+                        StatManager.StatManagerInstance.IncreasePlayerSpeed(changedStatsAmount[i]);
+                    else
+                        StatManager.StatManagerInstance.DecreasePlayerSpeed(changedStatsAmount[i]);
                     break;
-                case 1:
-                    StatManager.StatManagerInstance.IncreaseLifePoints(changedStatsAmount[i]);
+                case stats.LifePoints:
+                    if(isPositiveBonus[i])
+                        StatManager.StatManagerInstance.IncreaseLifePoints(changedStatsAmount[i]);
+                    else
+                        StatManager.StatManagerInstance.DecreaseLifePoints(changedStatsAmount[i]);
                     break;
-                case 2:
-                    StatManager.StatManagerInstance.IncreaseAttackRange(changedStatsAmount[i]);
+                case stats.ProjectileLifeTime:
+                    if(isPositiveBonus[i])
+                        StatManager.StatManagerInstance.IncreaseProjectileLifetime(changedStatsAmount[i]);
+                    else
+                        StatManager.StatManagerInstance.DecreaseProjectileLifetime(changedStatsAmount[i]);
                     break;
-                case 3: 
-                    StatManager.StatManagerInstance.IncreaseAttackDamage(changedStatsAmount[i]);
+                case stats.AttackDamage: 
+                    if(isPositiveBonus[i])
+                        StatManager.StatManagerInstance.IncreaseAttackDamage(changedStatsAmount[i]);
+                    else
+                        StatManager.StatManagerInstance.DecreaseAttackDamage(changedStatsAmount[i]);
                     break;
-                case 4: 
-                    StatManager.StatManagerInstance.IncreaseNumberOfDashes(changedStatsAmount[i]);
+                case stats.NumberOfDashes: 
+                    if(isPositiveBonus[i])
+                        StatManager.StatManagerInstance.IncreaseNumberOfDashes(changedStatsAmount[i]);
+                    else
+                        StatManager.StatManagerInstance.DecreaseNumberOfDashes(changedStatsAmount[i]);
                     break;
-                case 5:
-                    StatManager.StatManagerInstance.DecreaseDashCooldown(changedStatsAmount[i]);
+                case stats.DashCooldown:
+                    if(isPositiveBonus[i])
+                        StatManager.StatManagerInstance.DecreaseDashCooldown(changedStatsAmount[i]);
+                    else
+                        StatManager.StatManagerInstance.IncreaseDashCooldown(changedStatsAmount[i]);
                     break;
-                case 6:
-                    StatManager.StatManagerInstance.IncreaseProjectileSpeed(changedStatsAmount[i]);
+                case stats.ProjectileSpeed:
+                    if(isPositiveBonus[i])
+                        StatManager.StatManagerInstance.IncreaseProjectileSpeed(changedStatsAmount[i]);
+                    else
+                        StatManager.StatManagerInstance.DecreasePlayerSpeed(changedStatsAmount[i]);
+                    break;
+                case stats.FireRate:
+                    if(isPositiveBonus[i])
+                        StatManager.StatManagerInstance.IncreaseFireRate(changedStatsAmount[i]);
+                    else
+                        StatManager.StatManagerInstance.DecreaseFireRate(changedStatsAmount[i]);
                     break;
             }
         }

@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class HoneyMovement : MonoBehaviour
 {
-    public float projectileSpeed = 6;
-    public float lifeTime = 0.8f;
+    private float lifeTime = StatManager.StatManagerInstance.GetProjectileLifetime();
 
     public Vector2 mvtVec;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    
 
     // Update is called once per frame
     void FixedUpdate()
@@ -21,7 +15,7 @@ public class HoneyMovement : MonoBehaviour
         if (mvtVec == null)
             return;
 
-        float amtToMove = projectileSpeed * Time.deltaTime;
+        float amtToMove = StatManager.StatManagerInstance.GetProjectileSpeed() * Time.deltaTime;
 
         transform.Translate(mvtVec * amtToMove, Space.World);
 
@@ -35,7 +29,7 @@ public class HoneyMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Roses")
+        if (collision.gameObject.tag.Equals("Wall") || collision.gameObject.tag.Equals("Roses"))
             Destroy(gameObject);
     }
 
