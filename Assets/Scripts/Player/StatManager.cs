@@ -15,20 +15,21 @@ public class StatManager : MonoBehaviour
     private float[] playerAttributes = new []
     {
         5.0f,     // playerSpeed
-        100.0f,   // lifePoints
+        3f,   // lifePoints
         0.7f,     // projectileLifetime
         1.0f,     // attackDamage
-        1.0f,     // numberOfDashes
+        2.0f,     // numberOfDashes
         2.0f,    // dashCooldownInSeconds
         6.0f,     // projectileSpeed
         0.3f,      // fireRate
-        100.0f,   // maxHealth
+        6f,   // maxHealth
+        2.0f    //maxNumOfDashes
     };
 
     // poll types: -1 - none, 0 - blue, 1 - red, 2 - lila, 3 - yellow
     private bool[] hasPollen = new bool[4];
    
-        private int nectarAmount = 0;
+    private int nectarAmount = 0;
     
     private bool _isDead = false;
 
@@ -136,7 +137,20 @@ public class StatManager : MonoBehaviour
     {
         return playerAttributes[4];
     }
-    
+
+    public void IncreaseMaxNumberOfDashes(int increase)
+    {
+        playerAttributes[9] += increase;
+    }
+    public void DecreaseMaxNumberOfDashes(int decrease)
+    {
+        playerAttributes[9] -= decrease;
+    }
+    public float GetMaxNumberOfDashes()
+    {
+        return playerAttributes[9];
+    }
+
     public void IncreaseDashCooldown(int increase)
     {
         playerAttributes[5] += increase;

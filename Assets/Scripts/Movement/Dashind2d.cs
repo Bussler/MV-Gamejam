@@ -29,7 +29,7 @@ public class Dashind2d : MonoBehaviour
     private void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
-        availableDashs = maxNumOfDashs;
+        //availableDashs = maxNumOfDashs;
     }
 
 
@@ -43,19 +43,20 @@ public class Dashind2d : MonoBehaviour
         switch (state)
         {
             case dashState.Ready: //initialize dash
-                if (Input.GetKeyDown(KeyCode.Space) && availableDashs>0)
+                if (Input.GetKeyDown(KeyCode.Space) && StatManager.StatManagerInstance.GetNumberOfDashes() >0)//availableDashs>0)
                 {
-                    availableDashs--;
+                    StatManager.StatManagerInstance.DecreaseNumberOfDashes(1);//availableDashs--;
                     savedVel = rb.velocity; //restore velocity after dashing
                     Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")); //get player input in order to correctly add velocity
                     rb.velocity = movement * dashSpeed; //actual dashing
                     state = dashState.Dashing;
                 }
-                else if (availableDashs < maxNumOfDashs){ //load up dashs 
+                else if (StatManager.StatManagerInstance.GetNumberOfDashes() < StatManager.StatManagerInstance.GetMaxNumberOfDashes())
+                { //load up dashs change statmanager with "availableDashs"
                     dashReloadTimer += Time.deltaTime;
                     if(dashReloadTimer >= dashReloadTime)//reload a dash
                     {
-                        availableDashs++;
+                        StatManager.StatManagerInstance.IncreaseNumberOfDashes(1);//availableDashs++;
                         dashReloadTimer = 0;
                     }
                         

@@ -46,13 +46,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAttributes:
   - 4
-  - 100
+  - 3
   - 0.7
   - 1
-  - 1
+  - 2
   - 2
   - 5
   - 0.2
+  - 6
+  - 2
 --- !u!114 &8345376423896475366
 MonoBehaviour:
   m_ObjectHideFlags: 0
