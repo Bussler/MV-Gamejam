@@ -706,8 +706,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1341677129}
   - component: {fileID: 1341677128}
+  - component: {fileID: 1341677130}
   m_Layer: 0
-  m_Name: StatManager
+  m_Name: SingletonManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -725,13 +726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0825a21999e5c9442b7ea468b99b5e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 5
-  lifePoints: 100
-  attackRange: 10
-  attackDamage: 1
-  numberOfDashes: 1
-  dashCooldownInSeconds: 20
-  projectileSpeed: 5
+  playerAttributes: 05000000640000000a00000001000000010000001400000005000000
 --- !u!4 &1341677129
 Transform:
   m_ObjectHideFlags: 0
@@ -746,6 +741,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1341677130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341677127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966cff8ee86a441498fb5ff1a60eba2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1407711386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,6 +1034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca9d258f9f80e941a88044f068e705c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rosesDamage: 10
 --- !u!1 &1924234137
 GameObject:
   m_ObjectHideFlags: 0

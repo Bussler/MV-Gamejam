@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 6
-  lifeTime: 1
+  lifeTime: 0.8
   mvtVec: {x: 0, y: 0}
 --- !u!61 &1021461394793169632
 BoxCollider2D:

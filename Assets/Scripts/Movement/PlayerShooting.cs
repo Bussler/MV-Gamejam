@@ -9,7 +9,6 @@ public class PlayerShooting : MonoBehaviour
 
     public GameObject weapon;
 
-    public float fireRate = 0.3f;
     public float lastTimeFired = 0;
 
     // Start is called before the first frame update
@@ -51,10 +50,11 @@ public class PlayerShooting : MonoBehaviour
         }
 
         //abfrage an shooting speed
-       if (didFire && Time.time - lastTimeFired > fireRate)
+       if (didFire && Time.time - lastTimeFired > StatManager.StatManagerInstance.GetFireRate())
         {
             GameObject honey = Instantiate(weapon, spawnPos.position, Quaternion.identity); //projectile shoot
             honey.GetComponent<HoneyMovement>().mvtVec = transform.up; //set facing direction
+            //TODO set lifetime of honey according to player shooting range
             
             lastTimeFired = Time.time;
         }
