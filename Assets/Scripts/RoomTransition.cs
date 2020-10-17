@@ -167,25 +167,25 @@ public class RoomTransition : MonoBehaviour
 
     public void GoToNextRoomNorth()
     {
-        coordY -= 1;
+        coordY += 1;
         EnterNewRoom(rooms[coordX, coordY]);
         player.transform.position = southEntrance.transform.position;
     }
     public void GoToNextRoomSouth()
     {
-        coordY += 1;
+        coordY -= 1;
         EnterNewRoom(rooms[coordX, coordY]);
         player.transform.position = northEntrance.transform.position;
     }
     public void GoToNextRoomWest()
     {
-        coordX += 1;
+        coordX -= 1;
         EnterNewRoom(rooms[coordX, coordY]);
         player.transform.position = eastEntrance.transform.position;
     }
     public void GoToNextRoomEast()
     {
-        coordX -= 1;
+        coordX += 1;
         EnterNewRoom(rooms[coordX, coordY]);
         player.transform.position = westEntrance.transform.position;
     }
