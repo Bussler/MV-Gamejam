@@ -13,6 +13,9 @@ public class PlayerShooting : MonoBehaviour
     public float lastTimeFired = 0;
     public AudioSource aS;
 
+    [SerializeField]
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,8 +40,8 @@ public class PlayerShooting : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
+            animator.Play("BeeTop");
             player.GetComponent<SpriteRenderer>().flipX = false;
-            player.transform.rotation = Quaternion.Euler(0, 0, 90);
             didFire = true;
 
             if (Input.GetKey(KeyCode.W))
@@ -47,8 +50,8 @@ public class PlayerShooting : MonoBehaviour
         else if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.rotation = Quaternion.Euler(0, 0, 180);
+            animator.Play("BeeDown");
             player.GetComponent<SpriteRenderer>().flipX = false;
-            player.transform.rotation = Quaternion.Euler(0, 0, -90);
             didFire = true;
 
             if (Input.GetKey(KeyCode.S))
@@ -57,8 +60,8 @@ public class PlayerShooting : MonoBehaviour
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.rotation = Quaternion.Euler(0, 0, -90);
+            animator.Play("Bee_Floating");
             player.GetComponent<SpriteRenderer>().flipX = false;
-            player.transform.rotation = Quaternion.Euler(0, 0, 0);
             didFire = true;
 
             if (Input.GetKey(KeyCode.D))
@@ -67,8 +70,8 @@ public class PlayerShooting : MonoBehaviour
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.rotation = Quaternion.Euler(0, 0, 90);
+            animator.Play("Bee_Floating");
             player.GetComponent<SpriteRenderer>().flipX = true;
-            player.transform.rotation = Quaternion.Euler(0, 0, 0);
             didFire = true;
 
             if (Input.GetKey(KeyCode.A))

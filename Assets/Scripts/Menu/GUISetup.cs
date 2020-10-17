@@ -12,6 +12,7 @@ public class GUISetup : MonoBehaviour
 
     public Image[] sprints;
 
+    public GameObject ingameMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +23,24 @@ public class GUISetup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            showUnshowMenu();
         showHearts();
         showSprints();
         Nektar.text = "Nectar: " + StatManager.StatManagerInstance.GetNectarAmount();
+    }
+
+    public void showUnshowMenu()
+    {
+        ingameMenu.SetActive(!ingameMenu.activeInHierarchy);
+        if(Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+        else
+        {
+            Time.timeScale = 0;
+        }
     }
 
     public void showHearts()
