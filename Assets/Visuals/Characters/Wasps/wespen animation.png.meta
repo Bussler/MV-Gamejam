@@ -1,0 +1,295 @@
+fileFormatVersion: 2
+guid: ae4fa1dba1d40d54f874c3d635b6e544
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5829491237974501374
+    second: wespen animation_0
+  - first:
+      213: -6364311170263836549
+    second: wespen animation_1
+  - first:
+      213: 3722359565909409808
+    second: wespen animation_2
+  - first:
+      213: 355941706238092422
+    second: wespen animation_3
+  - first:
+      213: 8348331550259289567
+    second: wespen animation_4
+  - first:
+      213: 1087419621978007002
+    second: wespen animation_5
+  - first:
+      213: -3891741811729972458
+    second: wespen animation_6
+  - first:
+      213: 4376858131687430948
+    second: wespen animation_7
+  - first:
+      213: -7910783477480139066
+    second: wespen animation_8
+  - first:
+      213: 6233739316778216003
+    second: wespen animation_9
+  - first:
+      213: 5645080432088827750
+    second: wespen animation_10
+  - first:
+      213: 4431427859724559115
+    second: wespen animation_11
+  - first:
+      213: -1309265728086710553
+    second: wespen animation_12
+  - first:
+      213: -5841247606920918764
+    second: wespen animation_13
+  - first:
+      213: -8538524711764461072
+    second: wespen animation_14
+  - first:
+      213: 7139629911727098881
+    second: wespen animation_15
+  - first:
+      213: -6288540105030934060
+    second: wespen animation_16
+  - first:
+      213: 3989399385421352285
+    second: wespen animation_17
+  - first:
+      213: -7171118406219044841
+    second: wespen animation_18
+  - first:
+      213: 5844252833631918267
+    second: wespen animation_19
+  - first:
+      213: 1320340527351710049
+    second: wespen animation_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: wespen animation_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 282
+        width: 216
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef7e8bc156386e050800000000000000
+      internalID: 5829491237974501374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wespen animation_1
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 282
+        width: 216
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b789f50d5bc6da7a0800000000000000
+      internalID: -6364311170263836549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wespen animation_2
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 282
+        width: 216
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 010ce44ad4a78a330800000000000000
+      internalID: 3722359565909409808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wespen animation_3
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 282
+        width: 216
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6846111981f80f400800000000000000
+      internalID: 355941706238092422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wespen animation_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 52
+        width: 216
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd1468405b3bd370800000000000000
+      internalID: 8348331550259289567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wespen animation_5
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 52
+        width: 216
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad5e9c1826a471f00800000000000000
+      internalID: 1087419621978007002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 9a0853515c9724c46804c1b99778eb11
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
