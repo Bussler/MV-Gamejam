@@ -36,7 +36,7 @@ public class HitboxDetection : MonoBehaviour
         if (objectTags[0].Equals("Flower"))
         {
             int flowerType = int.Parse(objectTags[1]);
-            StatManager.StatManagerInstance.SetCurrentPollType(flowerType);
+           // StatManager.StatManagerInstance.SetCurrentPollType(flowerType);
         }
     }
 

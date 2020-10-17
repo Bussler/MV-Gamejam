@@ -6,26 +6,19 @@ public class Blume : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public enum BlumenType
-    {
-        none,
-        red,
-        blue,
-        yellow,
-        lila
+    public int type;
 
-    }
+  
 
-    public BlumenType type;
+    public int nectarToGive;
+    
 
-    public int nectarToGiveFirst;
-        public int nectarToGiveSecond;
-
-    public bool bestäubt;
+   
     public bool hasPollen;
 
     void Start()
     {
+        hasPollen = true;
         
     }
 
@@ -41,7 +34,14 @@ public class Blume : MonoBehaviour
         if (other.gameObject.tag == "Player" )
         {
             //GameObject.FindObjectOfType<StatManager>;
-            StatManager.StatManagerInstance.IsDead();
+            if (hasPollen)
+            {
+                //hier die anzeige anschalten
+                //GameObject.FindObjectOfType<PlayerMovement>().transform.GetChild(1).GetChild(type).gameObject.SetActive(true);
+
+                StatManager.StatManagerInstance.AddPollType(type, nectarToGive);
+                hasPollen = false;
+            }
         }
     }
 }

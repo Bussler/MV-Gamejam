@@ -202,17 +202,22 @@ public class StatManager : MonoBehaviour
         return playerAttributes[8];
     }
 
-    public void SetCurrentPollType(int type){}
+    
 
-    public void AddCurrentPollType(int type, int amount)
+    public void AddPollType(int type, int amount)
     {
         if (hasPollen[type])
         {
-            IncreaseNectarAmount(amount);
+            IncreaseNectarAmount(amount*2);
             // currentPollType =
+            GameObject.FindObjectOfType<PlayerMovement>().transform.GetChild(1).GetChild(type).gameObject.SetActive(false);
+            hasPollen[type] = false;
         }
         else
         {
+            hasPollen[type] = true;
+            IncreaseNectarAmount(amount * 1);
+            GameObject.FindObjectOfType<PlayerMovement>().transform.GetChild(1).GetChild(type).gameObject.SetActive(true);
             // TODO ändert sich das dann sofort wenn man zu einem anderen geht?
             //currentPollType = type;
         }
