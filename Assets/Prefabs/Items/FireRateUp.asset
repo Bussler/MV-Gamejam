@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8af7ce86a55c479d9a16c76e7e2c02a8, type: 3}
-  m_Name: TestItem2
+  m_Name: FireRateUp
   m_EditorClassIdentifier: 
-  name: Honey Boney
-  cost: 20
-  changedStats: 
-  changedStatsAmount: 
-  isPositiveBonus: 
+  name: FireRateUp
+  cost: 3
+  image: {fileID: 0}
+  changedStats: 00000000
+  changedStatsAmount:
+  - 0.05
+  isPositiveBonus: 01
