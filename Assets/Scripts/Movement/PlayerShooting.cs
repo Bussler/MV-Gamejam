@@ -55,6 +55,7 @@ public class PlayerShooting : MonoBehaviour
         {
             GameObject honey = Instantiate(weapon, spawnPos.position, Quaternion.identity); //projectile shoot
             honey.GetComponent<HoneyMovement>().mvtVec = transform.up; //set facing direction
+            //TODO set lifetime of honey according to player shooting range
             
             lastTimeFired = Time.time;
         }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class HoneyMovement : MonoBehaviour
 {
     public float projectileSpeed = 6;
-    public float lifeTime = 1;
+    public float lifeTime = 0.8f;
 
     public Vector2 mvtVec;
 

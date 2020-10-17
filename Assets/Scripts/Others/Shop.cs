@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
      public static Shop ShopInstance { get; private set; }
-
+     
      
      public Item[] items = new Item[5];
      
