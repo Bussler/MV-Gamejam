@@ -19,7 +19,7 @@ public class Item : ScriptableObject
     public new String name;
     public int cost;
     public stats[] changedStats;
-    public int[] changedStatsAmount;
+    public float[] changedStatsAmount;
     public bool[] isPositiveBonus;
 
     public void ApplyEffects()
