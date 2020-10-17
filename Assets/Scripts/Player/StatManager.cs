@@ -24,9 +24,11 @@ public class StatManager : MonoBehaviour
         0.3f,      // fireRate
         100.0f,   // maxHealth
     };
-    
+
     // poll types: -1 - none, 0 - blue, 1 - red, 2 - lila, 3 - yellow
-    private int currentPollType = -1, nectarAmount = 0;
+    private bool[] hasPollen = new bool[4];
+   
+        private int nectarAmount = 0;
     
     private bool _isDead = false;
 
@@ -187,6 +189,7 @@ public class StatManager : MonoBehaviour
         return playerAttributes[7];
     }
     
+<<<<<<< Updated upstream
     public void IncreaseMaxHealth(int increase)
     {
         playerAttributes[8] += increase;
@@ -201,11 +204,14 @@ public class StatManager : MonoBehaviour
     }
     
     public void SetCurrentPollType(int type)
+=======
+    public void AddCurrentPollType(int type, int amount)
+>>>>>>> Stashed changes
     {
-        if (type == currentPollType)
+        if (hasPollen[type])
         {
-            IncreaseNectarAmount(1);
-            currentPollType = -1;
+            IncreaseNectarAmount(amount);
+            currentPollType =
         }
         else
         {
@@ -213,8 +219,5 @@ public class StatManager : MonoBehaviour
             currentPollType = type;
         }
     }
-    public int GetCurrentPollType()
-    {
-        return currentPollType;
-    }
+    
 }
