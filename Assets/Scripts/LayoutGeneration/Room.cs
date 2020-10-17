@@ -48,4 +48,9 @@ public class Room
     {
         return doorWayNorth && doorWayEast && doorWaySouth && doorWayWest;
     }
+
+    public override string ToString()
+    {
+        return "East: " + doorWayEast + " West: " + doorWayWest + " South: " + doorWaySouth + " North: " + doorWayNorth;
+    }
 }

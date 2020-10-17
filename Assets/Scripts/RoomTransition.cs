@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class RoomTransition : MonoBehaviour
 {
@@ -37,6 +39,7 @@ public class RoomTransition : MonoBehaviour
         player = GameObject.FindObjectOfType<PlayerMovement>().gameObject;
         Debug.Log("GetFloor");
         rooms = gameObject.GetComponent<LayoutGenerator>().GetFloor();
+        
        // Debug.Log(rooms[4,4]);
         spawned = new bool[rooms.Length, rooms.Length];
 
@@ -56,7 +59,7 @@ public class RoomTransition : MonoBehaviour
       
 
         
-
+        // Debug.Log(rooms[coordX, coordY].ToString());
         EnterNewRoom(rooms[coordX, coordY]);
        
        
@@ -70,10 +73,11 @@ public class RoomTransition : MonoBehaviour
 
     public void EnterNewRoom(Room room)
     {
-        Debug.Log("" + room.doorWayEast);
-        Debug.Log("" + room.doorWayWest);
-        Debug.Log("" + room.doorWayNorth);
-        Debug.Log("" + room.doorWaySouth);
+        Debug.Log(rooms[coordX, coordY].ToString());
+        // Debug.Log("" + room.doorWayEast);
+        // Debug.Log("" + room.doorWayWest);
+        // Debug.Log("" + room.doorWayNorth);
+        // Debug.Log("" + room.doorWaySouth);
         // Destroy(activeRoom.gameObject);// TODO vllt nur inactiv setzen und schauen ob schon gespawnt und dann activ setzten, damit sachen im raum bestehen bleiben können und gegner nicht neu gespawnt werden
         if (activeRoom != null)
         {
