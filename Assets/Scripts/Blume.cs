@@ -16,6 +16,8 @@ public class Blume : MonoBehaviour
    
     public bool hasPollen;
 
+    public bool isDead= false;
+
     void Start()
     {
         hasPollen = true;
@@ -43,5 +45,10 @@ public class Blume : MonoBehaviour
                 hasPollen = false;
             }
         }
+    }
+
+    public void OnDisable()
+    {
+        isDead = false;
     }
 }
