@@ -41,6 +41,8 @@ public class Gegner : MonoBehaviour
     int x = 0;
     private Vector3 playerMoveDirection;
     private Vector3 playerLastPos;
+
+    public GameObject DieParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -162,6 +164,7 @@ public class Gegner : MonoBehaviour
 
     private void Die()
     {
+        Instantiate(DieParticle, this.transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 
