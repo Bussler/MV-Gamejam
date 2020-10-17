@@ -16,11 +16,11 @@ public class StatManager : MonoBehaviour
     {
         5.0f,     // playerSpeed
         100.0f,   // lifePoints
-        0.8f,     // projectileLifetime
+        0.7f,     // projectileLifetime
         1.0f,     // attackDamage
         1.0f,     // numberOfDashes
-        20.0f,    // dashCooldownInSeconds
-        5.0f,     // projectileSpeed
+        2.0f,    // dashCooldownInSeconds
+        6.0f,     // projectileSpeed
         0.3f      // fireRate
     };
     
