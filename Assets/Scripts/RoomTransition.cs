@@ -37,29 +37,27 @@ public class RoomTransition : MonoBehaviour
         player = GameObject.FindObjectOfType<PlayerMovement>().gameObject;
         Debug.Log("GetFloor");
         rooms = gameObject.GetComponent<LayoutGenerator>().GetFloor();
-        Debug.Log(rooms[4,4]);
+       // Debug.Log(rooms[4,4]);
         spawned = new bool[rooms.Length, rooms.Length];
 
-        int x=0;
-        int y=0;
+        
         for(int i =0; i < 100; i++)
         {
             for (int l = 0; l < 100; l++)
             {
-                Debug.Log(i + "," + l);
+               // Debug.Log(i + "," + l);
                 if (rooms[i, l].roomType == Room.RoomType.Starting)
                 {
-                    x = i;
-                    y = l;
+                    coordX = i;
+                    coordY = l;
                 }
             }
         }
       
 
-        coordX = x;
-        coordY = y;
+        
 
-        EnterNewRoom(rooms[x, y]);
+        EnterNewRoom(rooms[coordX, coordY]);
        
        
       
@@ -83,76 +81,46 @@ public class RoomTransition : MonoBehaviour
         }
         if (spawned[coordX, coordY])//wenn es schon gespawned wurde
         {
-           activeRoom= GameObject.Find("" + coordX + "," + coordY);
-           //activeRoom.SetActive(true);
+            activeRoom = GameObject.Find("" + coordX + "," + coordY);
+            //activeRoom.SetActive(true);
             activeRoom.gameObject.transform.Translate(1000, 0, 0);
-            if (room.doorWayEast)
-            {
-                DoorEast.SetActive(true);
-            }
-            else
-            {
-                DoorEast.SetActive(false);
-            }
-            if (room.doorWayNorth)
-            {
-                DoorNorth.SetActive(true);
-            }
-            else
-            {
-                DoorNorth.SetActive(false);
-            }
-            if (room.doorWaySouth)
-            {
-                DoorSouth.SetActive(true);
-            }
-            else
-            {
-                DoorSouth.SetActive(false);
-            }
-            if (room.doorWayWest)
-            {
-                DoorWest.SetActive(true);
-            }
-            else
-            {
-                DoorWest.SetActive(false);
-            }
-            return;
+            
         }
-
-        switch (room.roomType)
+        else
         {
-            case Room.RoomType.Regular:
-             activeRoom=   Instantiate(roomPrefaps[Random.Range(0, roomPrefaps.Length)], Vector3.zero, Quaternion.identity);
-                activeRoom.name = "" + coordX + "," + coordY;
-                spawned[coordX, coordY] = true;
-                break;
-            case Room.RoomType.Starting:
-                activeRoom = Instantiate(roomPrefaps[Random.Range(0, roomPrefaps.Length)], Vector3.zero, Quaternion.identity);
-                activeRoom.name = "" + coordX + "," + coordY;
-                spawned[coordX, coordY] = true;
-               
-                break;
-            case Room.RoomType.Shop:
-                activeRoom= Instantiate(shopRoomPrefaps[Random.Range(0, shopRoomPrefaps.Length)], Vector3.zero, Quaternion.identity);
-                activeRoom.name = "" + coordX + "," + coordY;
-                spawned[coordX, coordY] = true;
-                break;
-            case Room.RoomType.Boss:
-                activeRoom= Instantiate(bossRoomPrefaps[Random.Range(0, bossRoomPrefaps.Length)], Vector3.zero, Quaternion.identity);
-                activeRoom.name = "" + coordX + "," + coordY;
-                spawned[coordX, coordY] = true;
-                break;
-            case Room.RoomType.Item:
-                activeRoom= Instantiate(itemRoomPrefaps[Random.Range(0, itemRoomPrefaps.Length)], Vector3.zero, Quaternion.identity);
-                activeRoom.name = "" + coordX + "," + coordY;
-                spawned[coordX, coordY] = true;
-                break;
+
+            switch (room.roomType)
+            {
+                case Room.RoomType.Regular:
+                    activeRoom = Instantiate(roomPrefaps[Random.Range(0, roomPrefaps.Length)], Vector3.zero, Quaternion.identity);
+                    activeRoom.name = "" + coordX + "," + coordY;
+                    spawned[coordX, coordY] = true;
+                    break;
+                case Room.RoomType.Starting:
+                    activeRoom = Instantiate(roomPrefaps[Random.Range(0, roomPrefaps.Length)], Vector3.zero, Quaternion.identity);
+                    activeRoom.name = "" + coordX + "," + coordY;
+                    spawned[coordX, coordY] = true;
+
+                    break;
+                case Room.RoomType.Shop:
+                    activeRoom = Instantiate(shopRoomPrefaps[Random.Range(0, shopRoomPrefaps.Length)], Vector3.zero, Quaternion.identity);
+                    activeRoom.name = "" + coordX + "," + coordY;
+                    spawned[coordX, coordY] = true;
+                    break;
+                case Room.RoomType.Boss:
+                    activeRoom = Instantiate(bossRoomPrefaps[Random.Range(0, bossRoomPrefaps.Length)], Vector3.zero, Quaternion.identity);
+                    activeRoom.name = "" + coordX + "," + coordY;
+                    spawned[coordX, coordY] = true;
+                    break;
+                case Room.RoomType.Item:
+                    activeRoom = Instantiate(itemRoomPrefaps[Random.Range(0, itemRoomPrefaps.Length)], Vector3.zero, Quaternion.identity);
+                    activeRoom.name = "" + coordX + "," + coordY;
+                    spawned[coordX, coordY] = true;
+                    break;
+
+            }
 
         }
-       
-
 
 
         if (room.doorWayEast)
@@ -163,6 +131,7 @@ public class RoomTransition : MonoBehaviour
         {
             DoorEast.SetActive(false);
         }
+
         if (room.doorWayNorth)
         {
             DoorNorth.SetActive(true);
@@ -171,6 +140,7 @@ public class RoomTransition : MonoBehaviour
         {
             DoorNorth.SetActive(false);
         }
+
         if (room.doorWaySouth)
         {
             DoorSouth.SetActive(true);
@@ -179,6 +149,7 @@ public class RoomTransition : MonoBehaviour
         {
             DoorSouth.SetActive(false);
         }
+
         if (room.doorWayWest)
         {
             DoorWest.SetActive(true);
@@ -192,25 +163,25 @@ public class RoomTransition : MonoBehaviour
 
     public void GoToNextRoomNorth()
     {
-        coordY += 1;
+        coordY -= 1;
         EnterNewRoom(rooms[coordX, coordY]);
         player.transform.position = southEntrance.transform.position;
     }
     public void GoToNextRoomSouth()
     {
-        coordY -= 1;
+        coordY += 1;
         EnterNewRoom(rooms[coordX, coordY]);
         player.transform.position = northEntrance.transform.position;
     }
     public void GoToNextRoomWest()
     {
-        coordX -= 1;
+        coordX += 1;
         EnterNewRoom(rooms[coordX, coordY]);
         player.transform.position = eastEntrance.transform.position;
     }
     public void GoToNextRoomEast()
     {
-        coordX += 1;
+        coordX -= 1;
         EnterNewRoom(rooms[coordX, coordY]);
         player.transform.position = westEntrance.transform.position;
     }

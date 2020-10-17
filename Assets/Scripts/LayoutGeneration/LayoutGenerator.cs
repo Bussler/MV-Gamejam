@@ -36,7 +36,7 @@ public class LayoutGenerator : MonoBehaviour
         }
 
         generateFloor(roomCount);
-      //  printFloor();
+        printFloor();
         Debug.Log("Generate");
     }
 
