@@ -7,7 +7,7 @@ public class LayoutGenerator : MonoBehaviour
 
     public Room[,] floor;
 
-    public int roomCount = 20;
+    public int numberOfRooms = 20;
 
     private int indexX = 49;
 
@@ -35,9 +35,12 @@ public class LayoutGenerator : MonoBehaviour
             }
         }
 
-        generateFloor(roomCount);
-        printFloor();
-        Debug.Log("Generate");
+        generateFloor();
+        placeSpecialRooms();
+        //printFloor();
+        //Debug.Log("Generate");
+
+        
     }
 
     // Update is called once per frame
@@ -45,6 +48,35 @@ public class LayoutGenerator : MonoBehaviour
     {
         
     }
+
+    void placeSpecialRooms()
+    {
+        List<Room> endRooms = new List<Room>();
+
+        for (int i = 0; i < 100; ++i)
+        {
+            for (int j = 0; j < 100; ++j)
+            {
+                
+                if(floor[i, j].roomType == Room.RoomType.Regular)
+                {   
+                    //XOR
+                    if(floor[i, j].doorWayEast ^ floor[i, j].doorWayNorth ^ floor[i, j].doorWaySouth ^ floor[i, j].doorWayWest)
+                    {
+                        endRooms.Add(floor[i, j]);
+                    }
+                }
+                
+            }
+        }
+
+        int number = Random.Range(0, endRooms.Count-1);
+        endRooms[number].roomType = Room.RoomType.Shop;
+        endRooms.Remove(endRooms[number]);
+        number = Random.Range(0, endRooms.Count - 1);
+        endRooms[number].roomType = Room.RoomType.Item;
+    }
+
     //for debugging
     void printFloor()
     {
@@ -59,6 +91,19 @@ public class LayoutGenerator : MonoBehaviour
                     if(floor[i, j].roomType == Room.RoomType.Starting)
                     {
                         cube.gameObject.GetComponent<Renderer>().material.color = Color.red;
+
+                    }
+                    if (floor[i, j].roomType == Room.RoomType.Boss)
+                    {
+                        cube.gameObject.GetComponent<Renderer>().material.color = Color.green;
+                    }
+                    if (floor[i, j].roomType == Room.RoomType.Shop)
+                    {
+                        cube.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+                    }
+                    if (floor[i, j].roomType == Room.RoomType.Item)
+                    {
+                        cube.gameObject.GetComponent<Renderer>().material.color = Color.cyan;
                     }
                     cubes.Add(cube);
                     if(floor[i,j].doorWayNorth)
@@ -95,7 +140,7 @@ public class LayoutGenerator : MonoBehaviour
                     }
 
                 }
-
+                
                 //GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
 
                 //cube.transform.position = new Vector3(2 * i, 2 * j, 0);
@@ -104,7 +149,7 @@ public class LayoutGenerator : MonoBehaviour
         }
     }
 
-    void generateFloor(int numberOfRooms)
+    void generateFloor()
     {
         
         Room startingRoom = new Room { };
@@ -143,8 +188,6 @@ public class LayoutGenerator : MonoBehaviour
                 currentRoom = roomsToBeAdded.Peek();
         }
         
-       
-        
     }
 
     void setDoor(int direction, ref Room room, ref Room nextRoom)
@@ -152,16 +195,16 @@ public class LayoutGenerator : MonoBehaviour
         switch (direction)
         {
             case 0:
-                room.doorWaySouth = true;
-                nextRoom.doorWayNorth = true;
+                room.doorWayNorth = true;
+                nextRoom.doorWaySouth = true;
                 break;
             case 1:
                 room.doorWayEast = true;
                 nextRoom.doorWayWest = true;
                 break;
             case 2:
-                room.doorWayNorth = true;
-                nextRoom.doorWaySouth = true;
+                room.doorWaySouth = true;
+                nextRoom.doorWayNorth = true;
                 break;
             default:
                 room.doorWayWest = true;
@@ -232,7 +275,6 @@ public class LayoutGenerator : MonoBehaviour
 
         
 
-
         if (indexX + axisX >= 0 && indexY + axisY >= 0 && indexX + axisX <= 99 && indexY + axisY <= 99 
             && floor[indexX + axisX, indexY + axisY].roomType == Room.RoomType.Empty)
         {
@@ -246,6 +288,10 @@ public class LayoutGenerator : MonoBehaviour
                 nextRoom.roomType = Room.RoomType.Regular;
                 roomsToBeAdded.Enqueue(nextRoom);
                 setDoor(direction, ref room, ref nextRoom);
+                if(numberOfRooms == 1)
+                {
+                    nextRoom.roomType = Room.RoomType.Boss;
+                }
                 return true;
             }
             else
