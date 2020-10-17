@@ -11,23 +11,29 @@ public class HitboxDetection : MonoBehaviour
     
     private String _playerTag = "Player";
 
-    [SerializeField] private int rosesDamage = 10;
+    public bool blinking = false;
+
+    [SerializeField] private int rosesDamage = 1;
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag.Equals("Roses"))
+        if (other.gameObject.tag.Equals("Roses") && !blinking)
         {
             StatManager.StatManagerInstance.DecreaseLifePoints(rosesDamage);
+            StartCoroutine(DoBlinks(3, 0.2f));//corotine zum blinken
+            blinking = true;
             return;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag.Equals("EnemyProjectile"))
+        if (other.gameObject.tag.Equals("EnemyProjectile") && !blinking)
         {
             Debug.Log("HIT " + other.gameObject.GetComponent<EnemyProjectile>().damage);
             int damage = other.gameObject.GetComponent<EnemyProjectile>().damage;
             StatManager.StatManagerInstance.DecreaseLifePoints(damage);
+            StartCoroutine(DoBlinks(3, 0.2f));//corotine zum blinken
+            blinking = true;
             return;
         }
         
@@ -38,6 +44,32 @@ public class HitboxDetection : MonoBehaviour
             int flowerType = int.Parse(objectTags[1]);
            // StatManager.StatManagerInstance.SetCurrentPollType(flowerType);
         }
+    }
+
+    IEnumerator DoBlinks(int blinks, float blinkTime)
+    {
+        bool half = false;
+        Color cur = GetComponent<SpriteRenderer>().color;
+
+        for (int i=0; i<blinks*2; i++)
+        {
+            if (half)
+            {
+                this.GetComponent<SpriteRenderer>().color = new Color(cur.r, cur.g, cur.b, 1);
+                half = false;
+            }
+            else
+            {
+                this.GetComponent<SpriteRenderer>().color = new Color(cur.r, cur.g, cur.b, 0.3f);
+                half = true;
+            }
+            //wait for a bit
+            yield return new WaitForSeconds(blinkTime);
+        }
+
+        //make sure renderer is setup when we exit
+        this.GetComponent<SpriteRenderer>().color = new Color(cur.r, cur.g, cur.b, 1);
+        blinking = false;
     }
 
     // Start is called before the first frame update
