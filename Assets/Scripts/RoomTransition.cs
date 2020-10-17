@@ -157,20 +157,20 @@ public class RoomTransition : MonoBehaviour
 
         if (room.doorWayNorth)
         {
-            DoorNorth.SetActive(true);
-        }
-        else
-        {
-            DoorNorth.SetActive(false);
-        }
-
-        if (room.doorWaySouth)
-        {
             DoorSouth.SetActive(true);
         }
         else
         {
             DoorSouth.SetActive(false);
+        }
+
+        if (room.doorWaySouth)
+        {
+            DoorNorth.SetActive(true);
+        }
+        else
+        {
+            DoorNorth.SetActive(false);
         }
 
         if (room.doorWayWest)
@@ -191,13 +191,13 @@ public class RoomTransition : MonoBehaviour
 
     public void GoToNextRoomNorth()
     {
-        coordY += 1;
+        coordY -= 1;
         EnterNewRoom(rooms[coordX, coordY]);
         player.transform.position = southEntrance.transform.position;
     }
     public void GoToNextRoomSouth()
     {
-        coordY -= 1;
+        coordY += 1;
         EnterNewRoom(rooms[coordX, coordY]);
         player.transform.position = northEntrance.transform.position;
     }
