@@ -30,6 +30,7 @@ public class ShopSelection : MonoBehaviour
                 {
                     ItemFields[i].GetComponent<ItemField>().itemToBuy = Shop.ShopInstance.items[r];
                     ItemFields[i].GetComponent<ItemField>().indexForBuy = r;
+                    ItemFields[i].GetComponent<ItemField>().showPrice();
                     alreadyDrawn.Add(r);
                 }
 

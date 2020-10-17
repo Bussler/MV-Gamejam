@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        spawnEnemies(4);
+        spawnEnemies(3);
     }
 
     
@@ -18,9 +18,7 @@ public class EnemySpawner : MonoBehaviour
         SpawnArea[] spawnPointsArray = GameObject.FindObjectsOfType<SpawnArea>();
         List<SpawnArea> spawnPoints = new List<SpawnArea>(spawnPointsArray);
 
-        //delete spawn areas from list that are too near to the player
-
-        for(int i = 0; i< numEnemies; i++)
+        for (int i = 0; i< numEnemies; i++)
         {
             //get random enemy to spawn
             GameObject EnemyToSpawn = enemies[Random.Range(0, enemies.Length)];

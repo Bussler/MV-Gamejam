@@ -9,7 +9,9 @@ public class ItemField : MonoBehaviour
 
     public void showPrice()//TODO
     {
-
+        GameObject text = transform.GetChild(0).gameObject;
+        text.GetComponent<TextMesh>().text = "Cost: " + itemToBuy.cost;
+        text.SetActive(true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) //buy the item
