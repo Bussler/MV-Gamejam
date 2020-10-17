@@ -189,7 +189,6 @@ public class StatManager : MonoBehaviour
         return playerAttributes[7];
     }
     
-<<<<<<< Updated upstream
     public void IncreaseMaxHealth(int increase)
     {
         playerAttributes[8] += increase;
@@ -202,21 +201,20 @@ public class StatManager : MonoBehaviour
     {
         return playerAttributes[8];
     }
-    
-    public void SetCurrentPollType(int type)
-=======
+
+    public void SetCurrentPollType(int type){}
+
     public void AddCurrentPollType(int type, int amount)
->>>>>>> Stashed changes
     {
         if (hasPollen[type])
         {
             IncreaseNectarAmount(amount);
-            currentPollType =
+            // currentPollType =
         }
         else
         {
             // TODO ändert sich das dann sofort wenn man zu einem anderen geht?
-            currentPollType = type;
+            //currentPollType = type;
         }
     }
     

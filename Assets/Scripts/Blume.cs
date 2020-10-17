@@ -40,8 +40,8 @@ public class Blume : MonoBehaviour
         //Test for player and do damage
         if (other.gameObject.tag == "Player" )
         {
-           GameObject.FindObjectOfType<StatManager>
-
+            //GameObject.FindObjectOfType<StatManager>;
+            StatManager.StatManagerInstance.IsDead();
         }
     }
 }
