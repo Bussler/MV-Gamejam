@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Wings
   cost: 300
+  image: {fileID: 21300000, guid: d17ff492bf472004b836699573dc8deb, type: 3}
   changedStats: 00000000
   changedStatsAmount:
   - 0.5

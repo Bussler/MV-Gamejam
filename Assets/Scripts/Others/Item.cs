@@ -14,10 +14,12 @@ public class Item : ScriptableObject
         DashCooldown,
         ProjectileSpeed,
         FireRate,
-        MaxHealth
+        MaxHealth,
+        MaxNumOfDashes
     }
     public new String name;
     public int cost;
+    public Sprite image;
     public stats[] changedStats;
     public float[] changedStatsAmount;
     public bool[] isPositiveBonus;
@@ -87,6 +89,12 @@ public class Item : ScriptableObject
                         StatManager.StatManagerInstance.DecreaseMaxHealth(changedStatsAmount[i]);
                         StatManager.StatManagerInstance.DecreaseLifePoints(changedStatsAmount[i]);
                     }
+                    break;
+                case stats.MaxNumOfDashes:
+                    if (isPositiveBonus[i])
+                        StatManager.StatManagerInstance.IncreaseMaxNumberOfDashes(changedStatsAmount[i]);
+                    else
+                        StatManager.StatManagerInstance.DecreaseMaxNumberOfDashes(changedStatsAmount[i]);
                     break;
             }
         }
