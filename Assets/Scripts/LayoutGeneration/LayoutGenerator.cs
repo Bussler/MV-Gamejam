@@ -152,16 +152,16 @@ public class LayoutGenerator : MonoBehaviour
         switch (direction)
         {
             case 0:
-                room.doorWayNorth = true;
-                nextRoom.doorWaySouth = true;
+                room.doorWaySouth = true;
+                nextRoom.doorWayNorth = true;
                 break;
             case 1:
                 room.doorWayEast = true;
                 nextRoom.doorWayWest = true;
                 break;
             case 2:
-                room.doorWaySouth = true;
-                nextRoom.doorWayNorth = true;
+                room.doorWayNorth = true;
+                nextRoom.doorWaySouth = true;
                 break;
             default:
                 room.doorWayWest = true;
