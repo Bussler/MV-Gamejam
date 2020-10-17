@@ -8,6 +8,7 @@ public class PlayerShooting : MonoBehaviour
     Transform spawnPos;
 
     public GameObject weapon;
+    public GameObject player;
 
     public float lastTimeFired = 0;
 
@@ -16,6 +17,8 @@ public class PlayerShooting : MonoBehaviour
     {
         if (spawnPos == null)
             spawnPos = transform.GetChild(0);
+
+        player = transform.parent.gameObject;
     }
 
     private void FixedUpdate()
@@ -31,21 +34,29 @@ public class PlayerShooting : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
+            player.GetComponent<SpriteRenderer>().flipX = false;
+            player.transform.rotation = Quaternion.Euler(0, 0, 90);
             didFire = true;
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.rotation = Quaternion.Euler(0, 0, 180);
+            player.GetComponent<SpriteRenderer>().flipX = false;
+            player.transform.rotation = Quaternion.Euler(0, 0, -90);
             didFire = true;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.rotation = Quaternion.Euler(0, 0, -90);
+            player.GetComponent<SpriteRenderer>().flipX = false;
+            player.transform.rotation = Quaternion.Euler(0, 0, 0);
             didFire = true;
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.rotation = Quaternion.Euler(0, 0, 90);
+            player.GetComponent<SpriteRenderer>().flipX = true;
+            player.transform.rotation = Quaternion.Euler(0, 0, 0);
             didFire = true;
         }
 

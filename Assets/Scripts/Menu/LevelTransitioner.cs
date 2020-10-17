@@ -23,5 +23,9 @@ public class LevelTransitioner : MonoBehaviour
 
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
 
 }
