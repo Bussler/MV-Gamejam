@@ -139,7 +139,6 @@ GameObject:
   - component: {fileID: 554418975}
   - component: {fileID: 554418977}
   - component: {fileID: 554418976}
-  - component: {fileID: 554418978}
   m_Layer: 0
   m_Name: EnemyArea (6)
   m_TagString: Untagged
@@ -225,32 +224,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &554418978
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554418974}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
-  m_EdgeRadius: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +510,6 @@ GameObject:
   - component: {fileID: 1575627242}
   - component: {fileID: 1575627245}
   - component: {fileID: 1575627244}
-  - component: {fileID: 1575627243}
   m_Layer: 0
   m_Name: EnemyArea (7)
   m_TagString: Untagged
@@ -559,32 +531,6 @@ Transform:
   m_Father: {fileID: 1468886476}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1575627243
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575627241}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
-  m_EdgeRadius: 0
 --- !u!114 &1575627244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,7 +1107,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6423355552541907923, guid: fbe852ab873d1fe4a9c98a2eb96a03e3, type: 3}
+    - {fileID: 8106901951250626278, guid: fbe852ab873d1fe4a9c98a2eb96a03e3, type: 3}
+    - {fileID: 6196835851753615718, guid: fbe852ab873d1fe4a9c98a2eb96a03e3, type: 3}
+    - {fileID: 5018771034519912121, guid: fbe852ab873d1fe4a9c98a2eb96a03e3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fbe852ab873d1fe4a9c98a2eb96a03e3, type: 3}
 --- !u!1001 &8261885226254822807
 PrefabInstance:
