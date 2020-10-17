@@ -1274,6 +1274,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4955950057312854144, guid: 2b90f54737385e4468c13f01994ea52e, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 6762193181869498941, guid: 72d0180a99e9c1140847d1600724b0d6, type: 3}
     - target: {fileID: 4955950057312854145, guid: 2b90f54737385e4468c13f01994ea52e, type: 3}
       propertyPath: m_Name
       value: Libelle
