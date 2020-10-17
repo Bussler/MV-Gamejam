@@ -7,10 +7,12 @@ public class HoneyMovement : MonoBehaviour
     private float lifeTime = 0.7f;// StatManager.StatManagerInstance.GetProjectileLifetime();
 
     public Vector2 mvtVec;
+   
 
     private void Start()
     {
         lifeTime = StatManager.StatManagerInstance.GetProjectileLifetime();
+      
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class HoneyMovement : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Wall") || collision.gameObject.tag.Equals("Roses")|| collision.gameObject.tag.Equals("Enemy"))
             Destroy(gameObject);
+
     }
 
 }

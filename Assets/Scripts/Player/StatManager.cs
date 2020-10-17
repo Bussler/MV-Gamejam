@@ -226,6 +226,7 @@ public class StatManager : MonoBehaviour
             // currentPollType =
             GameObject.FindObjectOfType<PlayerMovement>().transform.GetChild(1).GetChild(type).gameObject.SetActive(false);
             hasPollen[type] = false;
+            playerAttributes[0] += 0.25f;
         }
         else
         {
@@ -234,6 +235,7 @@ public class StatManager : MonoBehaviour
             GameObject.FindObjectOfType<PlayerMovement>().transform.GetChild(1).GetChild(type).gameObject.SetActive(true);
             // TODO ändert sich das dann sofort wenn man zu einem anderen geht?
             //currentPollType = type;
+            playerAttributes[0] -= 0.25f;
         }
     }
     

@@ -11,6 +11,7 @@ public class PlayerShooting : MonoBehaviour
     public GameObject player;
 
     public float lastTimeFired = 0;
+    public AudioSource aS;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class PlayerShooting : MonoBehaviour
             spawnPos = transform.GetChild(0);
 
         player = transform.parent.gameObject;
+        aS = this.GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -31,7 +33,7 @@ public class PlayerShooting : MonoBehaviour
     {
         bool didFire = false;
         bool faster = false;
-
+        
         if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -77,6 +79,10 @@ public class PlayerShooting : MonoBehaviour
        if (didFire && Time.time - lastTimeFired > StatManager.StatManagerInstance.GetFireRate())
         {
             GameObject honey = Instantiate(weapon, spawnPos.position, Quaternion.identity); //projectile shoot
+            if (!aS.isPlaying)
+            {
+                aS.Play();
+            }
             if (faster)
             {
                 honey.GetComponent<HoneyMovement>().mvtVec = transform.up*2; //set facing direction
