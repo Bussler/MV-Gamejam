@@ -8,7 +8,7 @@ public class ParrticleCleanup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        ps = gameObject.GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -16,7 +16,7 @@ public class ParrticleCleanup : MonoBehaviour
     {
         if (!ps.IsAlive())
         {
-
+            Destroy(gameObject);
         }
     }
 }

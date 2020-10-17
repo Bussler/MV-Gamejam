@@ -932,6 +932,10 @@ PrefabInstance:
       propertyPath: spreadFactor
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 4464593679998943633, guid: 2e6f36392b9756145a1e7ffb82cf3335, type: 3}
+      propertyPath: DieParticle
+      value: 
+      objectReference: {fileID: 3439593018625044472, guid: 87994e2d7988c504ca19239ba250cce5, type: 3}
     - target: {fileID: 4464593679998943636, guid: 2e6f36392b9756145a1e7ffb82cf3335, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.31
