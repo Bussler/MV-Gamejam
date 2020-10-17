@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 8664507672882963953, guid: 372c17ae56723764ea4823e81a2c83f9, type: 3}
   m_Color: {r: 0.25467247, g: 0.9150943, b: 0.37595692, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPos: {fileID: 3279568035218050207}
   weapon: {fileID: 1185881531927113445, guid: e935119561948494d960aa81335f3bc0, type: 3}
+  player: {fileID: 3279568035561329957}
   lastTimeFired: 0
 --- !u!1 &3279568035218050192
 GameObject:
@@ -161,7 +162,7 @@ Transform:
   m_GameObject: {fileID: 3279568035561329957}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2.35}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 3279568035126003015}
   m_Father: {fileID: 0}
@@ -304,7 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDashTime: 0.2
   dashCooldown: 0.2
-  dashSpeed: 7
+  dashSpeed: 6
   availableDashs: 1
   maxNumOfDashs: 2
   dashReloadTime: 2
