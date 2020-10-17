@@ -13,7 +13,8 @@ public class Item : ScriptableObject
         NumberOfDashes,
         DashCooldown,
         ProjectileSpeed,
-        FireRate
+        FireRate,
+        MaxHealth
     }
     public new String name;
     public int cost;
@@ -74,6 +75,18 @@ public class Item : ScriptableObject
                         StatManager.StatManagerInstance.IncreaseFireRate(changedStatsAmount[i]);
                     else
                         StatManager.StatManagerInstance.DecreaseFireRate(changedStatsAmount[i]);
+                    break;
+                case stats.MaxHealth:
+                    if (isPositiveBonus[i])
+                    {
+                        StatManager.StatManagerInstance.IncreaseMaxHealth(changedStatsAmount[i]);
+                        StatManager.StatManagerInstance.IncreaseLifePoints(changedStatsAmount[i]);
+                    }
+                    else
+                    {
+                        StatManager.StatManagerInstance.DecreaseMaxHealth(changedStatsAmount[i]);
+                        StatManager.StatManagerInstance.DecreaseLifePoints(changedStatsAmount[i]);
+                    }
                     break;
             }
         }

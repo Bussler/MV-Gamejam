@@ -21,7 +21,8 @@ public class StatManager : MonoBehaviour
         1.0f,     // numberOfDashes
         20.0f,    // dashCooldownInSeconds
         5.0f,     // projectileSpeed
-        0.3f      // fireRate
+        0.3f,      // fireRate
+        100.0f,   // maxHealth
     };
     
     // poll types: -1 - none, 0 - blue, 1 - red, 2 - lila, 3 - yellow
@@ -69,7 +70,13 @@ public class StatManager : MonoBehaviour
     }
     public void IncreaseLifePoints(int increase)
     {
+        
         playerAttributes[1] += increase;
+        if (playerAttributes[1] > playerAttributes[8])
+        {
+            // life points cannot be higher than max health
+            playerAttributes[1] = playerAttributes[8];
+        }
     }
     public float GetLifePoints()
     {
@@ -178,6 +185,19 @@ public class StatManager : MonoBehaviour
     public float GetFireRate()
     {
         return playerAttributes[7];
+    }
+    
+    public void IncreaseMaxHealth(int increase)
+    {
+        playerAttributes[8] += increase;
+    }
+    public void DecreaseMaxHealth(int decrease)
+    {
+        playerAttributes[8] -= decrease;
+    }
+    public float GetMaxHealth()
+    {
+        return playerAttributes[8];
     }
     
     public void SetCurrentPollType(int type)
