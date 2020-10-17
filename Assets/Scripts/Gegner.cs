@@ -43,9 +43,13 @@ public class Gegner : MonoBehaviour
     private Vector3 playerLastPos;
 
     public GameObject DieParticle;
+
+    private float lastX;
+    private SpriteRenderer render;
     // Start is called before the first frame update
     void Start()
     {
+        render = this.GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player").gameObject;
 
         if(moveType== MovementType.Random)
@@ -69,6 +73,9 @@ public class Gegner : MonoBehaviour
     {
         playerMoveDirection = player.transform.position - playerLastPos;
         playerLastPos = player.transform.position;
+
+
+
         switch (moveType)
         {
             case MovementType.Random:
@@ -148,7 +155,16 @@ public class Gegner : MonoBehaviour
 
         }
 
+        if(lastX > this.transform.position.x)
+        {
+            render.flipX = false;
+        }
+        else
+        {
+            render.flipX = true;
+        }
 
+        lastX = this.transform.position.x;
 
 
     }
