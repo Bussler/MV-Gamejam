@@ -224,9 +224,12 @@ public class Gegner : MonoBehaviour
                 for (int i = 0; i < spreadAnzahl; i++)
                 {
                     GameObject p = Instantiate(projectile, this.transform.position, Quaternion.identity);
-                    p.transform.right = (new Vector2(player.transform.position.x, player.transform.position.y) + Vector2.Perpendicular(new Vector2((player.transform.position - this.transform.position).x, (player.transform.position - this.transform.position).y)) * x*spreadFactor- Vector2.Perpendicular(new Vector2((player.transform.position - this.transform.position).x, (player.transform.position - this.transform.position).y))*i * spreadFactor) -new Vector2(this.transform.position.x,this.transform.position.y);
-                    p.GetComponent<EnemyProjectile>().moveVec = p.transform.right.normalized;
-                    p.GetComponent<EnemyProjectile>().enemy = this.gameObject;
+                    if (p != null)
+                    {
+                        p.transform.right = (new Vector2(player.transform.position.x, player.transform.position.y) + Vector2.Perpendicular(new Vector2((player.transform.position - this.transform.position).x, (player.transform.position - this.transform.position).y)) * x * spreadFactor - Vector2.Perpendicular(new Vector2((player.transform.position - this.transform.position).x, (player.transform.position - this.transform.position).y)) * i * spreadFactor) - new Vector2(this.transform.position.x, this.transform.position.y);
+                        p.GetComponent<EnemyProjectile>().moveVec = p.transform.right.normalized;
+                        p.GetComponent<EnemyProjectile>().enemy = this.gameObject;
+                    }
                 }
                 break;
 

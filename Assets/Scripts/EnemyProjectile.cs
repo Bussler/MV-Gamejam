@@ -27,6 +27,8 @@ public class EnemyProjectile : MonoBehaviour
     public GameObject enemy;
     private float time;
     private int x=1;
+
+    public GameObject particle;
     // Start is called before the first frame update
     void Start()
     {
@@ -120,6 +122,7 @@ public class EnemyProjectile : MonoBehaviour
             
             if (trajectoryType != Trajectory.piercing&& trajectoryType != Trajectory.bouncing && other.tag != "EnemyProjectile")
             {
+                Instantiate(particle, this.transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
             
