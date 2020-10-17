@@ -22,7 +22,7 @@ public class Shop : MonoBehaviour
          }
      }
 
-     private void buyItem(int index)
+     public void buyItem(int index)
      {
          Item item = items[index];
          if (StatManager.StatManagerInstance.GetNectarAmount() >= item.cost)
