@@ -7,30 +7,7 @@ public class RoomTransition : MonoBehaviour
     public int coordX;
 
     public int coordY;
-    public struct Room
-    {
-        public enum RoomType
-        {
-            Starting,
-            Boss,
-            Shop,
-            Item,
-            Regular,
-            Empty
-        }
-
-
-        public RoomType type;
-       
-
-       public  bool doorWayNorth ;
-
-        public bool doorWaySouth ;
-
-        public bool doorWayWest ;
-
-        public bool doorWayEast ;
-    }
+   
 
     public Room[,] rooms;
 
@@ -58,7 +35,34 @@ public class RoomTransition : MonoBehaviour
     void Start()
     {
         player = GameObject.FindObjectOfType<PlayerMovement>().gameObject;
-        EnterNewRoom(rooms[4, 4]);
+        Debug.Log("GetFloor");
+        rooms = gameObject.GetComponent<LayoutGenerator>().GetFloor();
+        Debug.Log(rooms[4,4]);
+        spawned = new bool[rooms.Length, rooms.Length];
+
+        int x=0;
+        int y=0;
+        for(int i =0; i < 100; i++)
+        {
+            for (int l = 0; l < 100; l++)
+            {
+                Debug.Log(i + "," + l);
+                if (rooms[i, l].roomType == Room.RoomType.Starting)
+                {
+                    x = i;
+                    y = l;
+                }
+            }
+        }
+      
+
+        coordX = x;
+        coordY = y;
+
+        EnterNewRoom(rooms[x, y]);
+       
+       
+      
     }
 
     // Update is called once per frame
@@ -68,21 +72,67 @@ public class RoomTransition : MonoBehaviour
 
     public void EnterNewRoom(Room room)
     {
+        Debug.Log("" + room.doorWayEast);
+        Debug.Log("" + room.doorWayWest);
+        Debug.Log("" + room.doorWayNorth);
+        Debug.Log("" + room.doorWaySouth);
         // Destroy(activeRoom.gameObject);// TODO vllt nur inactiv setzen und schauen ob schon gespawnt und dann activ setzten, damit sachen im raum bestehen bleiben können und gegner nicht neu gespawnt werden
-
-        activeRoom.gameObject.SetActive(false);
+        if (activeRoom != null)
+        {
+            activeRoom.gameObject.transform.Translate(-1000,0,0);
+        }
         if (spawned[coordX, coordY])//wenn es schon gespawned wurde
         {
-            GameObject.Find("" + coordX + "," + coordY).SetActive(true);
+           activeRoom= GameObject.Find("" + coordX + "," + coordY);
+           //activeRoom.SetActive(true);
+            activeRoom.gameObject.transform.Translate(1000, 0, 0);
+            if (room.doorWayEast)
+            {
+                DoorEast.SetActive(true);
+            }
+            else
+            {
+                DoorEast.SetActive(false);
+            }
+            if (room.doorWayNorth)
+            {
+                DoorNorth.SetActive(true);
+            }
+            else
+            {
+                DoorNorth.SetActive(false);
+            }
+            if (room.doorWaySouth)
+            {
+                DoorSouth.SetActive(true);
+            }
+            else
+            {
+                DoorSouth.SetActive(false);
+            }
+            if (room.doorWayWest)
+            {
+                DoorWest.SetActive(true);
+            }
+            else
+            {
+                DoorWest.SetActive(false);
+            }
             return;
         }
 
-        switch (room.type)
+        switch (room.roomType)
         {
             case Room.RoomType.Regular:
              activeRoom=   Instantiate(roomPrefaps[Random.Range(0, roomPrefaps.Length)], Vector3.zero, Quaternion.identity);
                 activeRoom.name = "" + coordX + "," + coordY;
                 spawned[coordX, coordY] = true;
+                break;
+            case Room.RoomType.Starting:
+                activeRoom = Instantiate(roomPrefaps[Random.Range(0, roomPrefaps.Length)], Vector3.zero, Quaternion.identity);
+                activeRoom.name = "" + coordX + "," + coordY;
+                spawned[coordX, coordY] = true;
+               
                 break;
             case Room.RoomType.Shop:
                 activeRoom= Instantiate(shopRoomPrefaps[Random.Range(0, shopRoomPrefaps.Length)], Vector3.zero, Quaternion.identity);

@@ -21,7 +21,7 @@ public class LayoutGenerator : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         floor = new Room[100, 100];
         for (int i = 0; i < 100; ++i)
@@ -36,7 +36,8 @@ public class LayoutGenerator : MonoBehaviour
         }
 
         generateFloor(roomCount);
-        //printFloor();
+      //  printFloor();
+        Debug.Log("Generate");
     }
 
     // Update is called once per frame
@@ -256,5 +257,10 @@ public class LayoutGenerator : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public Room[,] GetFloor()
+    {
+        return floor;
     }
 }
