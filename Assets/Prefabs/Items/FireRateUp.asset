@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: FireRateUp
   cost: 3
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 772f5a273cf0fe244a7b8af489f27a8a, type: 3}
   changedStats: 00000000
   changedStatsAmount:
   - 0.05
