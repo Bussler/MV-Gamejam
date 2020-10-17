@@ -24,6 +24,7 @@ public class GUISetup : MonoBehaviour
     {
         showHearts();
         showSprints();
+        Nektar.text = "Nectar: " + StatManager.StatManagerInstance.GetNectarAmount();
     }
 
     public void showHearts()
