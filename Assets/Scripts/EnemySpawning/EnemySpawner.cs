@@ -6,18 +6,37 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
     GameObject[] enemies = new GameObject[1];
+    public ArrayList spawnedEnemies= new ArrayList();
 
+    public bool cleared;
     void Start()
     {
-        spawnEnemies(3);
+       
     }
 
-    
+    public void Update()
+    {
+        if (spawnedEnemies.Count <=0)
+        {
+            cleared = true;
+        }
+        else
+        {
+            cleared = false;
+        }
+    }
+
     public void spawnEnemies(int numEnemies)
     {
         SpawnArea[] spawnPointsArray = GameObject.FindObjectsOfType<SpawnArea>();
         List<SpawnArea> spawnPoints = new List<SpawnArea>(spawnPointsArray);
 
+
+        foreach(GameObject g in spawnedEnemies)
+        {
+            Destroy(g);
+        }
+        spawnedEnemies.Clear();
         for (int i = 0; i< numEnemies; i++)
         {
             //get random enemy to spawn
@@ -61,7 +80,7 @@ public class EnemySpawner : MonoBehaviour
             while (!isLegalToSpawn);
 
             GameObject spawnedEnemy = Instantiate(EnemyToSpawn, new Vector3(spawnPointPosition.x, spawnPointPosition.y, -1), Quaternion.identity);//finally spawn if we have a legit spawn pos
-
+            spawnedEnemies.Add(spawnedEnemy);
             spawnPoints[rand].spawnEnemies--; //delete enemies to spawn
             if (spawnPoints[rand].spawnEnemies == 0)
                 spawnPoints.RemoveAt(rand);
