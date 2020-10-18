@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28770a8f554d0d94b9a3d2a1e04f4d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 6
   lifetime: 3
   damage: 1
   moveVec: {x: 0, y: 0, z: 0}

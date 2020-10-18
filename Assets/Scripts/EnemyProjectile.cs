@@ -81,6 +81,10 @@ public class EnemyProjectile : MonoBehaviour
 
                     this.transform.Translate((enemy.transform.position - this.transform.position).normalized * -speed * 0.01f * Time.deltaTime, Space.World);
                 }
+                else
+                {
+                    Destroy(gameObject);
+                }
                 break;
             case Trajectory.piercing:
                 this.transform.Translate(moveVec * speed * Time.deltaTime, Space.World);
@@ -122,7 +126,7 @@ public class EnemyProjectile : MonoBehaviour
                 moveVec = Vector2.Perpendicular(moveVec)*l;
             }
             
-            if (trajectoryType != Trajectory.piercing&& trajectoryType != Trajectory.bouncing && other.tag != "EnemyProjectile")
+            if (trajectoryType != Trajectory.piercing&& trajectoryType != Trajectory.bouncing && other.tag != "EnemyProjectile"&& trajectoryType != Trajectory.orbiting)
             {
                 Instantiate(particle, this.transform.position, Quaternion.identity);
                 Destroy(gameObject);

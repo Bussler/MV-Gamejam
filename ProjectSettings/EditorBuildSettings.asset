@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Options.unity
     guid: ca8a1688d1af6e34ab55304129e789ff
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/Joshi.unity
+    guid: fe3fd9d83a324614aa3ed3af1d7e18f4
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/Maarten.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

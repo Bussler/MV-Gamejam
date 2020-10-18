@@ -37,7 +37,7 @@ public class LayoutGenerator : MonoBehaviour
 
         generateFloor();
         placeSpecialRooms();
-        //printFloor();
+        printFloor();
         //Debug.Log("Generate");
 
         

@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e63e84a50a7937543b0c0b6c6a33eab6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 041d70b82c4ca0144bc4f90979e1fb5d, type: 3}
+  m_Color: {r: 0.8301887, g: 0.6439834, b: 0.41901034, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  lifetime: 5
+  lifetime: 3
   damage: 1
   moveVec: {x: 0, y: 0, z: 0}
   trajectoryType: 3
@@ -223,8 +223,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e63e84a50a7937543b0c0b6c6a33eab6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 041d70b82c4ca0144bc4f90979e1fb5d, type: 3}
+  m_Color: {r: 0.5471698, g: 0.31219658, b: 0.17808829, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

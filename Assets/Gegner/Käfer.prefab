@@ -126,12 +126,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9095ba0078fd2e0458c4ba098aeb0216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 7
   moveSpeed: 3
   moveType: 1
-  dodgeRange: 1
-  timeBetweenDirectionChange: 2
-  attackPerSecond: 1
+  dodgeRange: 4
+  timeBetweenDirectionChange: 3
+  attackPerSecond: 0.3
   attackType: 2
   directions:
   - {x: 1, y: 0}
