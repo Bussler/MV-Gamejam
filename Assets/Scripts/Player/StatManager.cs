@@ -15,15 +15,15 @@ public class StatManager : MonoBehaviour
     [SerializeField]
     private float[] playerAttributes = new []
     {
-        5.0f,     // playerSpeed
+        5.5f,     // playerSpeed
         3f,   // lifePoints
         0.7f,     // projectileLifetime
         1.0f,     // attackDamage
         2.0f,     // numberOfDashes
         2.0f,    // dashCooldownInSeconds
         6.0f,     // projectileSpeed
-        0.3f,      // fireRate
-        6f,   // maxHealth
+        0.65f,      // fireRate
+        10f,   // maxHealth
         2.0f    //maxNumOfDashes
     };
 
