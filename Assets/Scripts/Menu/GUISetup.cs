@@ -67,6 +67,7 @@ public class GUISetup : MonoBehaviour
     {
         StatManager stats = GameObject.FindObjectOfType<StatManager>();
         Destroy(stats.gameObject); //TODO is it possible to reset stats like this?
+        Time.timeScale = 1;
         SceneManager.LoadScene("Menu");
     }
 
