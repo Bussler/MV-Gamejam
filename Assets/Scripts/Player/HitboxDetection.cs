@@ -13,6 +13,9 @@ public class HitboxDetection : MonoBehaviour
 
     public bool blinking = false;
 
+    [SerializeField]
+    private float alphaBlinking = 0.2f;
+
     [SerializeField] private int rosesDamage = 1;
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -60,7 +63,7 @@ public class HitboxDetection : MonoBehaviour
             }
             else
             {
-                this.GetComponent<SpriteRenderer>().color = new Color(cur.r, cur.g, cur.b, 0.3f);
+                this.GetComponent<SpriteRenderer>().color = new Color(cur.r, cur.g, cur.b, alphaBlinking);
                 half = true;
             }
             //wait for a bit
