@@ -23,6 +23,10 @@ public class HitboxDetection : MonoBehaviour
         {
             StatManager.StatManagerInstance.DecreaseLifePoints(rosesDamage);
             StartCoroutine(DoBlinks(3, 0.2f));//corotine zum blinken
+            if (!gameObject.GetComponent<AudioSource>().isPlaying)
+            {
+                gameObject.GetComponent<AudioSource>().Play();
+            }
             blinking = true;
             return;
         }
@@ -32,10 +36,14 @@ public class HitboxDetection : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("EnemyProjectile") && !blinking)
         {
-            Debug.Log("HIT " + other.gameObject.GetComponent<EnemyProjectile>().damage);
+            //Debug.Log("HIT " + other.gameObject.GetComponent<EnemyProjectile>().damage);
             int damage = other.gameObject.GetComponent<EnemyProjectile>().damage;
             StatManager.StatManagerInstance.DecreaseLifePoints(damage);
             StartCoroutine(DoBlinks(3, 0.2f));//corotine zum blinken
+            if (!gameObject.GetComponent<AudioSource>().isPlaying)
+            {
+                gameObject.GetComponent<AudioSource>().Play();
+            }
             blinking = true;
             return;
         }
