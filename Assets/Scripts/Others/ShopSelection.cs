@@ -8,6 +8,7 @@ public class ShopSelection : MonoBehaviour
     [SerializeField]
     GameObject[] ItemFields;
 
+    public bool itemRoom;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,10 @@ public class ShopSelection : MonoBehaviour
                 else
                 {
                     ItemFields[i].GetComponent<ItemField>().itemToBuy = Shop.ShopInstance.items[r];
+                    if (itemRoom)
+                    {
+                        ItemFields[i].GetComponent<ItemField>().itemToBuy.cost = 0;
+                    }
                     ItemFields[i].GetComponent<ItemField>().indexForBuy = r;
                     ItemFields[i].GetComponent<ItemField>().showPrice();
                     alreadyDrawn.Add(r);

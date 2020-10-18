@@ -93,7 +93,7 @@ public class RoomTransition : MonoBehaviour
         // Destroy(activeRoom.gameObject);// TODO vllt nur inactiv setzen und schauen ob schon gespawnt und dann activ setzten, damit sachen im raum bestehen bleiben können und gegner nicht neu gespawnt werden
         if (activeRoom != null)
         {
-            activeRoom.gameObject.transform.Translate(-1000,0,0);
+            //activeRoom.gameObject.transform.Translate(-1000,0,0);
             activeRoom.transform.GetChild(0).gameObject.SetActive(false);
         }
         else
@@ -104,7 +104,7 @@ public class RoomTransition : MonoBehaviour
         {
             activeRoom = GameObject.Find("" + coordX + "," + coordY);
             //activeRoom.SetActive(true);
-            activeRoom.gameObject.transform.Translate(1000, 0, 0);
+           // activeRoom.gameObject.transform.Translate(1000, 0, 0);
             activeRoom.transform.GetChild(0).gameObject.SetActive(true);
             shouldSpawn = false;
         }
