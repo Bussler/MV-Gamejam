@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GUISetup : MonoBehaviour
@@ -60,6 +61,13 @@ public class GUISetup : MonoBehaviour
         {
             Time.timeScale = 0;
         }
+    }
+
+    public void BackToMenu()
+    {
+        StatManager stats = GameObject.FindObjectOfType<StatManager>();
+        Destroy(stats.gameObject); //TODO is it possible to reset stats like this?
+        SceneManager.LoadScene("Menu");
     }
 
     public void showHearts()

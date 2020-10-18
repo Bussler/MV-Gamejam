@@ -28,4 +28,9 @@ public class LevelTransitioner : MonoBehaviour
         Application.Quit();
     }
 
+    public void returnToMainMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
 }

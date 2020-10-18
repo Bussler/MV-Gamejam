@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class StatManager : MonoBehaviour
@@ -53,9 +54,11 @@ public class StatManager : MonoBehaviour
     
     private bool CheckIfDead()
     {
-        if (playerAttributes[1] < 0)
+        if (playerAttributes[1] <= 0)
         {
             _isDead = true;
+            Destroy(gameObject); //TODO reset stats like this?
+            SceneManager.LoadScene("DeathScene");
             return true;
         }
         else
