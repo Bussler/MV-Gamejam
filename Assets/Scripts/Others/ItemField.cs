@@ -31,7 +31,6 @@ public class ItemField : MonoBehaviour
         {
             if (!blinking)
             {
-                Debug.Log("Hahaeee");
                 StartCoroutine(DoBlinks(2, 0.2f));
                 blinking = true;
             }
@@ -43,7 +42,6 @@ public class ItemField : MonoBehaviour
     {
         bool half = false;
         Color cur = GetComponent<SpriteRenderer>().color;
-        Debug.Log("Haha");
         for (int i = 0; i < blinks * 2; i++)
         {
             if (half)
