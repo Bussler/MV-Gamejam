@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  moveSpeed: 0.5
+  moveSpeed: 0.4
   moveType: 1
   dodgeRange: 1
   timeBetweenDirectionChange: 1
