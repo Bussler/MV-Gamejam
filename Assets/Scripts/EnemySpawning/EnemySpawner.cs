@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour
     public bool cleared;
     void Start()
     {
-       
+        //spawnEnemies(4);
     }
 
     public void Update()
@@ -37,6 +37,7 @@ public class EnemySpawner : MonoBehaviour
             Destroy(g);
         }
         spawnedEnemies.Clear();
+
         for (int i = 0; i< numEnemies; i++)
         {
             //get random enemy to spawn
@@ -71,7 +72,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     if (enemy.GetComponent<SpriteRenderer>().bounds.Intersects(curBounds))//intersection, illegal spawn!
                     {
-                       // isLegalToSpawn = false; //hab hier auskommentiert
+                        //isLegalToSpawn = false; //hab hier auskommentiert
                         Debug.Log("Found intersection");
                         break;
                     }

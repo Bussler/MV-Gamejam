@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8af7ce86a55c479d9a16c76e7e2c02a8, type: 3}
   m_Name: MoreDashes
   m_EditorClassIdentifier: 
-  name: Dash
+  name: Dash Up
   cost: 3
   image: {fileID: 21300000, guid: a147c52efd7f8524cbd10b84b491a4b1, type: 3}
   changedStats: 09000000
