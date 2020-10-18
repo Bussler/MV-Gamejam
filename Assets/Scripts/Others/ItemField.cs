@@ -13,6 +13,10 @@ public class ItemField : MonoBehaviour
         text.GetComponent<TextMesh>().text = "Cost: " + itemToBuy.cost;
         text.SetActive(true);
 
+        GameObject NameText = transform.GetChild(1).gameObject;
+        NameText.GetComponent<TextMesh>().text = itemToBuy.name;
+        NameText.SetActive(true);
+
         this.GetComponent<SpriteRenderer>().sprite = itemToBuy.image;
     }
 

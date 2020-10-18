@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Range Up
   cost: 2
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 030b866338a4a574dba704449554da63, type: 3}
   changedStats: 02000000
   changedStatsAmount:
   - 0.1

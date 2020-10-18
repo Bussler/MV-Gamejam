@@ -865,13 +865,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1468886476}
     m_Modifications:
+    - target: {fileID: 4241905361474109681, guid: 437b3987b22e96745a969c2c475b4f8d, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7655191
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241905361474109681, guid: 437b3987b22e96745a969c2c475b4f8d, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5526732
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241905361474109681, guid: 437b3987b22e96745a969c2c475b4f8d, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.042528987
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241905361474109681, guid: 437b3987b22e96745a969c2c475b4f8d, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.08290106
+      objectReference: {fileID: 0}
     - target: {fileID: 4241905361474109683, guid: 437b3987b22e96745a969c2c475b4f8d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.042
+      value: -0.146
       objectReference: {fileID: 0}
     - target: {fileID: 4241905361474109683, guid: 437b3987b22e96745a969c2c475b4f8d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.19500001
+      value: 0.188
       objectReference: {fileID: 0}
     - target: {fileID: 4241905361474109683, guid: 437b3987b22e96745a969c2c475b4f8d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -908,6 +924,14 @@ PrefabInstance:
     - target: {fileID: 4241905361474109683, guid: 437b3987b22e96745a969c2c475b4f8d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241905361474109683, guid: 437b3987b22e96745a969c2c475b4f8d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.07745523
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241905361474109683, guid: 437b3987b22e96745a969c2c475b4f8d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.059602864
       objectReference: {fileID: 0}
     - target: {fileID: 4241905361474109687, guid: 437b3987b22e96745a969c2c475b4f8d, type: 3}
       propertyPath: m_Name
