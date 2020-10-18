@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
-  nectarToGive: 0
+  nectarToGive: 1
   hasPollen: 0
   isDead: 0
   timeToDie: 10
