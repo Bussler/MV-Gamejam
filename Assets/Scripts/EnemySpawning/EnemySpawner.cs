@@ -71,7 +71,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     if (enemy.GetComponent<SpriteRenderer>().bounds.Intersects(curBounds))//intersection, illegal spawn!
                     {
-                        isLegalToSpawn = false;
+                       // isLegalToSpawn = false; //hab hier auskommentiert
                         Debug.Log("Found intersection");
                         break;
                     }
